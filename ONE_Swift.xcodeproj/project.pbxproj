@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		3FA615287E3AC88BDDD46637 /* Pods_ONE_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93771E9195B48F26BDA7BC21 /* Pods_ONE_Swift.framework */; };
 		558FD9271CD0C95C00F3EA63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */; };
-		558FD9291CD0C95C00F3EA63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9281CD0C95C00F3EA63 /* ViewController.swift */; };
-		558FD92C1CD0C95C00F3EA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558FD92A1CD0C95C00F3EA63 /* Main.storyboard */; };
 		558FD92E1CD0C95C00F3EA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */; };
 		558FD9311CD0C95C00F3EA63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558FD92F1CD0C95C00F3EA63 /* LaunchScreen.storyboard */; };
+		558FD9541CD0D41E00F3EA63 /* JENHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9531CD0D41E00F3EA63 /* JENHomeViewController.swift */; };
+		558FD9561CD0D43400F3EA63 /* JENMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9551CD0D43400F3EA63 /* JENMusicViewController.swift */; };
+		558FD9581CD0D45000F3EA63 /* JENReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9571CD0D45000F3EA63 /* JENReadViewController.swift */; };
+		558FD95A1CD0D45800F3EA63 /* JENVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9591CD0D45800F3EA63 /* JENVideoViewController.swift */; };
+		558FD95C1CD0D47600F3EA63 /* JENNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD95B1CD0D47600F3EA63 /* JENNavigationController.swift */; };
+		558FD95E1CD0D48800F3EA63 /* JENTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD95D1CD0D48800F3EA63 /* JENTabBarController.swift */; };
+		558FD9621CD0DFE100F3EA63 /* JENLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */; };
+		558FD9641CD0E1AB00F3EA63 /* JENNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9631CD0E1AB00F3EA63 /* JENNetWorkTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D606FE1F9DA26DEA9262144 /* Pods-ONE_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONE_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ONE_Swift/Pods-ONE_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		558FD9231CD0C95C00F3EA63 /* ONE_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ONE_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		558FD9281CD0C95C00F3EA63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		558FD92B1CD0C95C00F3EA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		558FD9301CD0C95C00F3EA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		558FD9321CD0C95C00F3EA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		558FD9531CD0D41E00F3EA63 /* JENHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomeViewController.swift; sourceTree = "<group>"; };
+		558FD9551CD0D43400F3EA63 /* JENMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMusicViewController.swift; sourceTree = "<group>"; };
+		558FD9571CD0D45000F3EA63 /* JENReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadViewController.swift; sourceTree = "<group>"; };
+		558FD9591CD0D45800F3EA63 /* JENVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENVideoViewController.swift; sourceTree = "<group>"; };
+		558FD95B1CD0D47600F3EA63 /* JENNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENNavigationController.swift; sourceTree = "<group>"; };
+		558FD95D1CD0D48800F3EA63 /* JENTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTabBarController.swift; sourceTree = "<group>"; };
+		558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENLoadData.swift; sourceTree = "<group>"; };
+		558FD9631CD0E1AB00F3EA63 /* JENNetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENNetWorkTool.swift; sourceTree = "<group>"; };
 		6BD509C900744CEF6CF6593A /* Pods-ONE_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONE_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ONE_Swift/Pods-ONE_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		93771E9195B48F26BDA7BC21 /* Pods_ONE_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ONE_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,8 +92,6 @@
 			children = (
 				558FD9381CD0CA2100F3EA63 /* Classes */,
 				558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */,
-				558FD9281CD0C95C00F3EA63 /* ViewController.swift */,
-				558FD92A1CD0C95C00F3EA63 /* Main.storyboard */,
 				558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */,
 				558FD92F1CD0C95C00F3EA63 /* LaunchScreen.storyboard */,
 				558FD9321CD0C95C00F3EA63 /* Info.plist */,
@@ -93,12 +103,12 @@
 			isa = PBXGroup;
 			children = (
 				558FD9391CD0CA2100F3EA63 /* Home-首页 */,
-				558FD93D1CD0CA2100F3EA63 /* Main-主要 */,
 				558FD9411CD0CA2100F3EA63 /* Music-音乐 */,
-				558FD9451CD0CA2100F3EA63 /* Other-其他 */,
 				558FD9471CD0CA2100F3EA63 /* Reading-阅读 */,
-				558FD94B1CD0CA2100F3EA63 /* Search-搜索 */,
 				558FD94F1CD0CA2100F3EA63 /* Video-视频 */,
+				558FD93D1CD0CA2100F3EA63 /* Main-主要 */,
+				558FD94B1CD0CA2100F3EA63 /* Search-搜索 */,
+				558FD9451CD0CA2100F3EA63 /* Other-其他 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -116,6 +126,7 @@
 		558FD93A1CD0CA2100F3EA63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				558FD9531CD0D41E00F3EA63 /* JENHomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -147,6 +158,8 @@
 		558FD93E1CD0CA2100F3EA63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				558FD95B1CD0D47600F3EA63 /* JENNavigationController.swift */,
+				558FD95D1CD0D48800F3EA63 /* JENTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +191,7 @@
 		558FD9421CD0CA2100F3EA63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				558FD9551CD0D43400F3EA63 /* JENMusicViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +221,8 @@
 		558FD9461CD0CA2100F3EA63 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */,
+				558FD9631CD0E1AB00F3EA63 /* JENNetWorkTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -224,6 +240,7 @@
 		558FD9481CD0CA2100F3EA63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				558FD9571CD0D45000F3EA63 /* JENReadViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +303,7 @@
 		558FD9501CD0CA2100F3EA63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				558FD9591CD0D45800F3EA63 /* JENVideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -333,6 +351,7 @@
 		558FD91B1CD0C95C00F3EA63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JEN;
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "任玉祥";
@@ -368,7 +387,6 @@
 			files = (
 				558FD9311CD0C95C00F3EA63 /* LaunchScreen.storyboard in Resources */,
 				558FD92E1CD0C95C00F3EA63 /* Assets.xcassets in Resources */,
-				558FD92C1CD0C95C00F3EA63 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +445,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				558FD9291CD0C95C00F3EA63 /* ViewController.swift in Sources */,
+				558FD95A1CD0D45800F3EA63 /* JENVideoViewController.swift in Sources */,
+				558FD95E1CD0D48800F3EA63 /* JENTabBarController.swift in Sources */,
+				558FD9561CD0D43400F3EA63 /* JENMusicViewController.swift in Sources */,
+				558FD9641CD0E1AB00F3EA63 /* JENNetWorkTool.swift in Sources */,
+				558FD95C1CD0D47600F3EA63 /* JENNavigationController.swift in Sources */,
+				558FD9541CD0D41E00F3EA63 /* JENHomeViewController.swift in Sources */,
+				558FD9621CD0DFE100F3EA63 /* JENLoadData.swift in Sources */,
+				558FD9581CD0D45000F3EA63 /* JENReadViewController.swift in Sources */,
 				558FD9271CD0C95C00F3EA63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,14 +460,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		558FD92A1CD0C95C00F3EA63 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				558FD92B1CD0C95C00F3EA63 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		558FD92F1CD0C95C00F3EA63 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -541,6 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ONE_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.ONESwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ONE_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.ONESwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
