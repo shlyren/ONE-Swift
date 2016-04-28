@@ -7,6 +7,7 @@
 //
 
 import AFNetworking
+import SVProgressHUD
 
 enum RequestType {
     case GET
@@ -14,7 +15,7 @@ enum RequestType {
 }
 
 class JENNetWorkTool: AFHTTPSessionManager {
-    static let shareIntance : JENNetWorkTool = {
+    static let shareInstance : JENNetWorkTool = {
         
         let tool = JENNetWorkTool()
 
@@ -27,16 +28,20 @@ extension JENNetWorkTool {
     func request(requestType : RequestType, url : String, parameters : [String : AnyObject]?, completion : (responseObject : AnyObject?, error : NSError?) -> ()) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
-        
+        SVProgressHUD.show()
         /// 成功的闭包
         let successCallBack = { (task : NSURLSessionDataTask, responseObject : AnyObject?) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
+            SVProgressHUD.dismiss()
             completion(responseObject: responseObject, error: nil)
         }
         /// 失败的闭包
         let failureCallBack = { (task : NSURLSessionDataTask?, error : NSError) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
+            SVProgressHUD.dismiss()
+            
             completion(responseObject: nil, error: error)
+            
         }
         
         

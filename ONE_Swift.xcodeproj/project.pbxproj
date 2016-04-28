@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3FA615287E3AC88BDDD46637 /* Pods_ONE_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93771E9195B48F26BDA7BC21 /* Pods_ONE_Swift.framework */; };
+		55250B3C1CD1EB6800593404 /* JENHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B3A1CD1EB6800593404 /* JENHomeDetailViewController.swift */; };
+		55250B3D1CD1EB6800593404 /* JENHomeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55250B3B1CD1EB6800593404 /* JENHomeDetailViewController.xib */; };
+		55250B3F1CD1FEC800593404 /* JENPastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B3E1CD1FEC800593404 /* JENPastListViewController.swift */; };
+		55250B411CD2067700593404 /* JENHomePastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B401CD2067700593404 /* JENHomePastListViewController.swift */; };
+		55250B441CD20AED00593404 /* JENTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B431CD20AED00593404 /* JENTableViewExtension.swift */; };
+		55250B461CD20ECA00593404 /* JENMoreSubTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B451CD20ECA00593404 /* JENMoreSubTotalViewController.swift */; };
+		5554A0101CD1959100295948 /* JENHomeSubTotalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5554A00F1CD1959100295948 /* JENHomeSubTotalItem.swift */; };
+		5554A0131CD1AC6D00295948 /* JENHomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5554A0111CD1AC6D00295948 /* JENHomeTableCell.swift */; };
+		5554A0141CD1AC6D00295948 /* JENHomeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5554A0121CD1AC6D00295948 /* JENHomeTableCell.xib */; };
+		5554A0161CD1C29200295948 /* JENTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5554A0151CD1C29200295948 /* JENTableFooterView.swift */; };
+		5554A0181CD1C2A400295948 /* JENTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5554A0171CD1C2A400295948 /* JENTableFooterView.xib */; };
 		558FD9271CD0C95C00F3EA63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */; };
 		558FD92E1CD0C95C00F3EA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */; };
 		558FD9311CD0C95C00F3EA63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558FD92F1CD0C95C00F3EA63 /* LaunchScreen.storyboard */; };
@@ -23,6 +34,17 @@
 
 /* Begin PBXFileReference section */
 		3D606FE1F9DA26DEA9262144 /* Pods-ONE_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONE_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ONE_Swift/Pods-ONE_Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		55250B3A1CD1EB6800593404 /* JENHomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomeDetailViewController.swift; sourceTree = "<group>"; };
+		55250B3B1CD1EB6800593404 /* JENHomeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENHomeDetailViewController.xib; sourceTree = "<group>"; };
+		55250B3E1CD1FEC800593404 /* JENPastListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENPastListViewController.swift; sourceTree = "<group>"; };
+		55250B401CD2067700593404 /* JENHomePastListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomePastListViewController.swift; sourceTree = "<group>"; };
+		55250B431CD20AED00593404 /* JENTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTableViewExtension.swift; sourceTree = "<group>"; };
+		55250B451CD20ECA00593404 /* JENMoreSubTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMoreSubTotalViewController.swift; sourceTree = "<group>"; };
+		5554A00F1CD1959100295948 /* JENHomeSubTotalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomeSubTotalItem.swift; sourceTree = "<group>"; };
+		5554A0111CD1AC6D00295948 /* JENHomeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomeTableCell.swift; sourceTree = "<group>"; };
+		5554A0121CD1AC6D00295948 /* JENHomeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENHomeTableCell.xib; sourceTree = "<group>"; };
+		5554A0151CD1C29200295948 /* JENTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTableFooterView.swift; sourceTree = "<group>"; };
+		5554A0171CD1C2A400295948 /* JENTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENTableFooterView.xib; sourceTree = "<group>"; };
 		558FD9231CD0C95C00F3EA63 /* ONE_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ONE_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +89,14 @@
 				93771E9195B48F26BDA7BC21 /* Pods_ONE_Swift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55250B421CD20AD400593404 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				55250B431CD20AED00593404 /* JENTableViewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		558FD91A1CD0C95C00F3EA63 = {
@@ -127,6 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				558FD9531CD0D41E00F3EA63 /* JENHomeViewController.swift */,
+				55250B3A1CD1EB6800593404 /* JENHomeDetailViewController.swift */,
+				55250B3B1CD1EB6800593404 /* JENHomeDetailViewController.xib */,
+				55250B401CD2067700593404 /* JENHomePastListViewController.swift */,
+				55250B451CD20ECA00593404 /* JENMoreSubTotalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -134,6 +168,7 @@
 		558FD93B1CD0CA2100F3EA63 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5554A00F1CD1959100295948 /* JENHomeSubTotalItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,6 +176,8 @@
 		558FD93C1CD0CA2100F3EA63 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5554A0111CD1AC6D00295948 /* JENHomeTableCell.swift */,
+				5554A0121CD1AC6D00295948 /* JENHomeTableCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +197,7 @@
 			children = (
 				558FD95B1CD0D47600F3EA63 /* JENNavigationController.swift */,
 				558FD95D1CD0D48800F3EA63 /* JENTabBarController.swift */,
+				55250B3E1CD1FEC800593404 /* JENPastListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,6 +212,8 @@
 		558FD9401CD0CA2100F3EA63 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5554A0151CD1C29200295948 /* JENTableFooterView.swift */,
+				5554A0171CD1C2A400295948 /* JENTableFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,6 +253,7 @@
 		558FD9451CD0CA2100F3EA63 /* Other-其他 */ = {
 			isa = PBXGroup;
 			children = (
+				55250B421CD20AD400593404 /* Extension */,
 				558FD9461CD0CA2100F3EA63 /* Tools */,
 			);
 			path = "Other-其他";
@@ -385,8 +426,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5554A0181CD1C2A400295948 /* JENTableFooterView.xib in Resources */,
 				558FD9311CD0C95C00F3EA63 /* LaunchScreen.storyboard in Resources */,
 				558FD92E1CD0C95C00F3EA63 /* Assets.xcassets in Resources */,
+				55250B3D1CD1EB6800593404 /* JENHomeDetailViewController.xib in Resources */,
+				5554A0141CD1AC6D00295948 /* JENHomeTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,12 +490,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				558FD95A1CD0D45800F3EA63 /* JENVideoViewController.swift in Sources */,
+				55250B411CD2067700593404 /* JENHomePastListViewController.swift in Sources */,
 				558FD95E1CD0D48800F3EA63 /* JENTabBarController.swift in Sources */,
+				55250B441CD20AED00593404 /* JENTableViewExtension.swift in Sources */,
 				558FD9561CD0D43400F3EA63 /* JENMusicViewController.swift in Sources */,
+				55250B461CD20ECA00593404 /* JENMoreSubTotalViewController.swift in Sources */,
 				558FD9641CD0E1AB00F3EA63 /* JENNetWorkTool.swift in Sources */,
 				558FD95C1CD0D47600F3EA63 /* JENNavigationController.swift in Sources */,
+				5554A0131CD1AC6D00295948 /* JENHomeTableCell.swift in Sources */,
 				558FD9541CD0D41E00F3EA63 /* JENHomeViewController.swift in Sources */,
 				558FD9621CD0DFE100F3EA63 /* JENLoadData.swift in Sources */,
+				55250B3C1CD1EB6800593404 /* JENHomeDetailViewController.swift in Sources */,
+				5554A0161CD1C29200295948 /* JENTableFooterView.swift in Sources */,
+				55250B3F1CD1FEC800593404 /* JENPastListViewController.swift in Sources */,
+				5554A0101CD1959100295948 /* JENHomeSubTotalItem.swift in Sources */,
 				558FD9581CD0D45000F3EA63 /* JENReadViewController.swift in Sources */,
 				558FD9271CD0C95C00F3EA63 /* AppDelegate.swift in Sources */,
 			);

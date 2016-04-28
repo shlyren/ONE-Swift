@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KsD-WH-8TG" customClass="JENTableFooterView" customModule="ONE_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="301" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSr-aO-m4V" userLabel="view">
+                    <rect key="frame" x="10" y="10" width="281" height="34"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainCellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Wkj-0u-ziw">
+                            <rect key="frame" x="0.0" y="0.0" width="281" height="34"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看往期列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpF-RG-3yq">
+                            <rect key="frame" x="95" y="8" width="90" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlJ-Dz-dVO">
+                            <rect key="frame" x="0.0" y="0.0" width="281" height="34"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="IlJ-Dz-dVO" firstAttribute="top" secondItem="cSr-aO-m4V" secondAttribute="top" id="7B1-gi-fas"/>
+                        <constraint firstItem="PpF-RG-3yq" firstAttribute="centerY" secondItem="cSr-aO-m4V" secondAttribute="centerY" id="7cC-Ao-AWN"/>
+                        <constraint firstItem="Wkj-0u-ziw" firstAttribute="top" secondItem="cSr-aO-m4V" secondAttribute="top" id="EGE-yL-1RR"/>
+                        <constraint firstItem="PpF-RG-3yq" firstAttribute="centerX" secondItem="cSr-aO-m4V" secondAttribute="centerX" id="HHC-Lv-bky"/>
+                        <constraint firstAttribute="bottom" secondItem="IlJ-Dz-dVO" secondAttribute="bottom" id="MHC-ia-24U"/>
+                        <constraint firstItem="IlJ-Dz-dVO" firstAttribute="leading" secondItem="cSr-aO-m4V" secondAttribute="leading" id="ZrU-VX-JDe"/>
+                        <constraint firstAttribute="trailing" secondItem="IlJ-Dz-dVO" secondAttribute="trailing" id="d7F-DK-d7D"/>
+                        <constraint firstAttribute="bottom" secondItem="Wkj-0u-ziw" secondAttribute="bottom" id="iBU-zA-9ce"/>
+                        <constraint firstAttribute="trailing" secondItem="Wkj-0u-ziw" secondAttribute="trailing" id="nrN-I4-Dph"/>
+                        <constraint firstItem="Wkj-0u-ziw" firstAttribute="leading" secondItem="cSr-aO-m4V" secondAttribute="leading" id="pQi-X9-EAh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cSr-aO-m4V" firstAttribute="leading" secondItem="KsD-WH-8TG" secondAttribute="leading" constant="10" id="IQZ-SI-rG0"/>
+                <constraint firstItem="cSr-aO-m4V" firstAttribute="top" secondItem="KsD-WH-8TG" secondAttribute="top" constant="10" id="Y0J-e3-Rd7"/>
+                <constraint firstAttribute="bottom" secondItem="cSr-aO-m4V" secondAttribute="bottom" constant="10" id="fFo-q9-f7A"/>
+                <constraint firstAttribute="trailing" secondItem="cSr-aO-m4V" secondAttribute="trailing" constant="10" id="vfg-WV-q2G"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="footerBth" destination="IlJ-Dz-dVO" id="Pbj-OR-3W7"/>
+            </connections>
+            <point key="canvasLocation" x="36.5" y="353.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mainCellBackground" width="50" height="50"/>
+    </resources>
+</document>
