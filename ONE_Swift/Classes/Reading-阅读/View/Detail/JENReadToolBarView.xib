@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="CDa-Q8-c66" customClass="JENReadToolBarView" customModule="ONE_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaY-bc-vAV" userLabel="like Btn">
+                    <rect key="frame" x="0.0" y="1" width="125" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" image="like_default">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="like_selected">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="like_default"/>
+                    <connections>
+                        <action selector="praiseBtnClick" destination="CDa-Q8-c66" eventType="touchUpInside" id="MtJ-Da-UR2"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqj-ch-9kX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.52947198279999996" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="0k5-zt-0Oq"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-f3-Jsh">
+                    <rect key="frame" x="125" y="1" width="125" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" image="music_comment_default">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" title="100">
+                        <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.75716594829999995" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="commentBtnClick" destination="CDa-Q8-c66" eventType="touchUpInside" id="6HR-nN-oC7"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toolBarLine" translatesAutoresizingMaskIntoConstraints="NO" id="pfm-2O-nCe">
+                    <rect key="frame" x="125" y="6" width="1" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="aSl-Wn-bBe"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toolBarLine" translatesAutoresizingMaskIntoConstraints="NO" id="73I-QN-s0v">
+                    <rect key="frame" x="250" y="6" width="1" height="33"/>
+                </imageView>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdg-JW-PXw">
+                    <rect key="frame" x="250" y="1" width="125" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" image="shareImage">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="BaY-bc-vAV" secondAttribute="bottom" id="3fI-gd-gTH"/>
+                <constraint firstItem="oqj-ch-9kX" firstAttribute="leading" secondItem="CDa-Q8-c66" secondAttribute="leading" id="47P-I3-mSz"/>
+                <constraint firstAttribute="trailing" secondItem="oqj-ch-9kX" secondAttribute="trailing" id="6DK-cy-l79"/>
+                <constraint firstItem="UbD-f3-Jsh" firstAttribute="centerY" secondItem="BaY-bc-vAV" secondAttribute="centerY" id="70Y-df-gmb"/>
+                <constraint firstItem="73I-QN-s0v" firstAttribute="bottom" secondItem="pfm-2O-nCe" secondAttribute="bottom" id="93N-hk-5Me"/>
+                <constraint firstItem="73I-QN-s0v" firstAttribute="top" secondItem="pfm-2O-nCe" secondAttribute="top" id="Acn-Ht-Z7T"/>
+                <constraint firstItem="Qdg-JW-PXw" firstAttribute="leading" secondItem="UbD-f3-Jsh" secondAttribute="trailing" id="BsO-HT-vQZ"/>
+                <constraint firstAttribute="bottom" secondItem="pfm-2O-nCe" secondAttribute="bottom" constant="5" id="Czn-Dh-YXM"/>
+                <constraint firstItem="Qdg-JW-PXw" firstAttribute="centerY" secondItem="BaY-bc-vAV" secondAttribute="centerY" id="S24-AW-TF4"/>
+                <constraint firstItem="Qdg-JW-PXw" firstAttribute="leading" secondItem="UbD-f3-Jsh" secondAttribute="trailing" id="UtK-sn-m6d"/>
+                <constraint firstItem="BaY-bc-vAV" firstAttribute="leading" secondItem="CDa-Q8-c66" secondAttribute="leading" id="Vhu-Ok-aYs"/>
+                <constraint firstItem="oqj-ch-9kX" firstAttribute="top" secondItem="CDa-Q8-c66" secondAttribute="top" id="Wua-pa-hab"/>
+                <constraint firstItem="UbD-f3-Jsh" firstAttribute="height" secondItem="BaY-bc-vAV" secondAttribute="height" id="Xry-9G-10P"/>
+                <constraint firstItem="UbD-f3-Jsh" firstAttribute="leading" secondItem="BaY-bc-vAV" secondAttribute="trailing" id="aT7-Ln-w92"/>
+                <constraint firstItem="Qdg-JW-PXw" firstAttribute="height" secondItem="BaY-bc-vAV" secondAttribute="height" id="ab2-Nw-C6K"/>
+                <constraint firstItem="Qdg-JW-PXw" firstAttribute="width" secondItem="BaY-bc-vAV" secondAttribute="width" id="ftL-ds-6SL"/>
+                <constraint firstItem="73I-QN-s0v" firstAttribute="leading" secondItem="UbD-f3-Jsh" secondAttribute="trailing" id="iBE-H7-ElC"/>
+                <constraint firstItem="BaY-bc-vAV" firstAttribute="top" secondItem="oqj-ch-9kX" secondAttribute="bottom" id="jlM-wv-7QD"/>
+                <constraint firstItem="pfm-2O-nCe" firstAttribute="top" secondItem="oqj-ch-9kX" secondAttribute="bottom" constant="5" id="lYo-Ej-jep"/>
+                <constraint firstItem="pfm-2O-nCe" firstAttribute="leading" secondItem="BaY-bc-vAV" secondAttribute="trailing" id="m6u-De-dh2"/>
+                <constraint firstAttribute="trailing" secondItem="Qdg-JW-PXw" secondAttribute="trailing" id="n39-sC-7xp"/>
+                <constraint firstItem="73I-QN-s0v" firstAttribute="width" secondItem="pfm-2O-nCe" secondAttribute="width" id="oGv-ho-qgu"/>
+                <constraint firstItem="UbD-f3-Jsh" firstAttribute="leading" secondItem="BaY-bc-vAV" secondAttribute="trailing" id="ruD-KY-lYf"/>
+                <constraint firstItem="UbD-f3-Jsh" firstAttribute="width" secondItem="BaY-bc-vAV" secondAttribute="width" id="vnU-Qe-aMx"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="commentBtn" destination="UbD-f3-Jsh" id="UKg-hT-WSy"/>
+                <outlet property="praiseBtn" destination="BaY-bc-vAV" id="nfF-PE-tic"/>
+                <outlet property="shareBtn" destination="Qdg-JW-PXw" id="8Ab-ci-tuh"/>
+            </connections>
+            <point key="canvasLocation" x="350.5" y="278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="like_default" width="44" height="44"/>
+        <image name="like_selected" width="44" height="44"/>
+        <image name="music_comment_default" width="44" height="44"/>
+        <image name="shareImage" width="44" height="44"/>
+        <image name="toolBarLine" width="1" height="27"/>
+    </resources>
+</document>

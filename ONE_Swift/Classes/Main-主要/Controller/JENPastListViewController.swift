@@ -47,25 +47,40 @@ class JENPastListViewController: UITableViewController {
         
         var maxMonth = 0
         var minMonth = 0
-        
         var monthArr = [String]()
-        for var resYear = currentYear; resYear >= endYear; resYear-- {
+        
+        var resYear = currentYear
+        while resYear >= endYear {
+            
             maxMonth = resYear == currentYear ? currentMonth : 12;
             minMonth = resYear == endYear ? endMonth : 1;
             
-            for var resMonth = maxMonth; resMonth >= minMonth; resMonth-- {
+            var resMonth = maxMonth
+            while resMonth >= minMonth {
                 monthArr.append(String(format: "%zd-%02d", arguments: [resYear, resMonth]))
+                resMonth -= 1
             }
+            
+            resYear -= 1
         }
+        
+//        for var resYear = currentYear; resYear >= endYear; resYear -= 1 {
+//            maxMonth = resYear == currentYear ? currentMonth : 12;
+//            minMonth = resYear == endYear ? endMonth : 1;
+//            
+//            for var resMonth = maxMonth; resMonth >= minMonth; resMonth -= 1 {
+//                monthArr.append(String(format: "%zd-%02d", arguments: [resYear, resMonth]))
+//            }
+//        }
         
         return monthArr
         
     }
 
 
-    // MARK: - Table view data source=
+    // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView.tableView(nil, rowCount: pastLists.count)
+        tableView.tableViewWithNoData(nil, rowCount: pastLists.count)
         return pastLists.count
     }
 
@@ -84,5 +99,8 @@ class JENPastListViewController: UITableViewController {
         
         return cell!
     }
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }

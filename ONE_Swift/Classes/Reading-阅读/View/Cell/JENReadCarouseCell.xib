@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReadCarouseCell" rowHeight="86" id="5hR-xH-9Xq" customClass="JENReadCarouseCell" customModule="ONE_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="86"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5hR-xH-9Xq" id="N32-DA-9Kg">
+                <rect key="frame" x="0.0" y="0.0" width="315" height="85.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXE-S1-RJ7">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-GI-KG2">
+                        <rect key="frame" x="20" y="25" width="295" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIg-pG-6vv">
+                        <rect key="frame" x="20" y="51" width="295" height="18"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TXE-S1-RJ7" secondAttribute="trailing" id="FzU-Tl-d8T"/>
+                    <constraint firstItem="dIg-pG-6vv" firstAttribute="leading" secondItem="mSS-GI-KG2" secondAttribute="leading" id="I6Z-GY-qJ0"/>
+                    <constraint firstItem="TXE-S1-RJ7" firstAttribute="leading" secondItem="N32-DA-9Kg" secondAttribute="leading" id="PPJ-EB-8sF"/>
+                    <constraint firstItem="dIg-pG-6vv" firstAttribute="top" secondItem="mSS-GI-KG2" secondAttribute="bottom" constant="10" id="V00-x6-N7e"/>
+                    <constraint firstItem="mSS-GI-KG2" firstAttribute="leading" secondItem="N32-DA-9Kg" secondAttribute="leading" constant="20" id="dNf-5G-ooh"/>
+                    <constraint firstItem="TXE-S1-RJ7" firstAttribute="top" secondItem="N32-DA-9Kg" secondAttribute="top" id="nMX-C4-O6s"/>
+                    <constraint firstAttribute="trailing" secondItem="dIg-pG-6vv" secondAttribute="trailing" id="pgl-Yg-wDr"/>
+                    <constraint firstItem="mSS-GI-KG2" firstAttribute="top" secondItem="TXE-S1-RJ7" secondAttribute="bottom" constant="5" id="uYM-w2-p7Z"/>
+                    <constraint firstAttribute="trailing" secondItem="mSS-GI-KG2" secondAttribute="trailing" id="v5f-DG-RzY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.4549019608" green="0.68627450980000004" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="authorLabel" destination="mSS-GI-KG2" id="nuS-2h-HgA"/>
+                <outlet property="introductionLabel" destination="dIg-pG-6vv" id="Zdu-Dw-daw"/>
+                <outlet property="titleLabel" destination="TXE-S1-RJ7" id="eBh-ar-uel"/>
+            </connections>
+            <point key="canvasLocation" x="373" y="230"/>
+        </tableViewCell>
+    </objects>
+</document>

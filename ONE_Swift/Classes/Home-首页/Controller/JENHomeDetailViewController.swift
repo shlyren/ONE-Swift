@@ -18,7 +18,6 @@ class JENHomeDetailViewController: UIViewController {
     @IBOutlet weak var hp_author_label: UILabel!
     @IBOutlet weak var hp_content_label: UILabel!
     
-    
     var homeSubTotalItem = JENHomeSubTotalItem()
     
     override func viewDidLoad() {
@@ -36,19 +35,21 @@ class JENHomeDetailViewController: UIViewController {
         hp_maketime_label.text = homeSubTotalItem.hp_makettime
         hp_author_label.text = homeSubTotalItem.hp_author
         hp_content_label.text = homeSubTotalItem.hp_content
-        hp_img_url.sd_setImageWithURL(NSURL(string: homeSubTotalItem.hp_img_url), placeholderImage: UIImage(named: "home"))
+
         shareBtn.setTitle("\(homeSubTotalItem.sharenum)", forState: .Normal)
         shareBtn.setTitle("\(homeSubTotalItem.sharenum)", forState: .Highlighted)
         praiseBtn.setTitle("\(homeSubTotalItem.praisenum)", forState: .Normal)
         praiseBtn.setTitle("\(homeSubTotalItem.praisenum)", forState: .Highlighted)
+        guard let url = homeSubTotalItem.hp_img_url else {return}
+         hp_img_url.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "home"))
     }
 
     // MARK:- 拖拽手势
     @IBAction func pan(pan : UIPanGestureRecognizer) {
         
         let point = pan.translationInView(pan.view)
-        pan.view?.center.x += point.x
-        pan.view?.center.y += point.y
+        pan.view?.centerX += point.x
+        pan.view?.centerY += point.y
         
         if pan.state == .Ended {
             

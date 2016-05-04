@@ -12,8 +12,9 @@
 		55250B3D1CD1EB6800593404 /* JENHomeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55250B3B1CD1EB6800593404 /* JENHomeDetailViewController.xib */; };
 		55250B3F1CD1FEC800593404 /* JENPastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B3E1CD1FEC800593404 /* JENPastListViewController.swift */; };
 		55250B411CD2067700593404 /* JENHomePastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B401CD2067700593404 /* JENHomePastListViewController.swift */; };
-		55250B441CD20AED00593404 /* JENTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B431CD20AED00593404 /* JENTableViewExtension.swift */; };
-		55250B461CD20ECA00593404 /* JENMoreSubTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B451CD20ECA00593404 /* JENMoreSubTotalViewController.swift */; };
+		55250B441CD20AED00593404 /* JENExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B431CD20AED00593404 /* JENExtension.swift */; };
+		553FD4961CDA2B2A00BC0142 /* JENReadToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553FD4951CDA2B2A00BC0142 /* JENReadToolBarView.swift */; };
+		553FD4981CDA2B3400BC0142 /* JENReadToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553FD4971CDA2B3400BC0142 /* JENReadToolBarView.xib */; };
 		5554A0101CD1959100295948 /* JENHomeSubTotalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5554A00F1CD1959100295948 /* JENHomeSubTotalItem.swift */; };
 		5554A0131CD1AC6D00295948 /* JENHomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5554A0111CD1AC6D00295948 /* JENHomeTableCell.swift */; };
 		5554A0141CD1AC6D00295948 /* JENHomeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5554A0121CD1AC6D00295948 /* JENHomeTableCell.xib */; };
@@ -24,12 +25,37 @@
 		558FD9311CD0C95C00F3EA63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558FD92F1CD0C95C00F3EA63 /* LaunchScreen.storyboard */; };
 		558FD9541CD0D41E00F3EA63 /* JENHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9531CD0D41E00F3EA63 /* JENHomeViewController.swift */; };
 		558FD9561CD0D43400F3EA63 /* JENMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9551CD0D43400F3EA63 /* JENMusicViewController.swift */; };
-		558FD9581CD0D45000F3EA63 /* JENReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9571CD0D45000F3EA63 /* JENReadViewController.swift */; };
 		558FD95A1CD0D45800F3EA63 /* JENVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9591CD0D45800F3EA63 /* JENVideoViewController.swift */; };
 		558FD95C1CD0D47600F3EA63 /* JENNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD95B1CD0D47600F3EA63 /* JENNavigationController.swift */; };
 		558FD95E1CD0D48800F3EA63 /* JENTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD95D1CD0D48800F3EA63 /* JENTabBarController.swift */; };
 		558FD9621CD0DFE100F3EA63 /* JENLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */; };
 		558FD9641CD0E1AB00F3EA63 /* JENNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9631CD0E1AB00F3EA63 /* JENNetWorkTool.swift */; };
+		559D1DA91CD76A9800CA6CB3 /* JENReadCarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559D1DA81CD76A9800CA6CB3 /* JENReadCarouselItem.swift */; };
+		55D94CFE1CD988D100B8DDC2 /* JENTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94CFD1CD988D100B8DDC2 /* JENTitleButton.swift */; };
+		55D94D061CD996B500B8DDC2 /* JENReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D031CD996B500B8DDC2 /* JENReadViewController.swift */; };
+		55D94D0B1CD9972600B8DDC2 /* JENReadCarouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D081CD9972600B8DDC2 /* JENReadCarouseCell.swift */; };
+		55D94D0C1CD9972600B8DDC2 /* JENReadCarouseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D94D091CD9972600B8DDC2 /* JENReadCarouseCell.xib */; };
+		55D94D0F1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D0D1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.swift */; };
+		55D94D101CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D94D0E1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.xib */; };
+		55D94D121CD9979D00B8DDC2 /* JENReadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D111CD9979D00B8DDC2 /* JENReadTableViewController.swift */; };
+		55D94D141CD997C700B8DDC2 /* JENReadEssayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D131CD997C700B8DDC2 /* JENReadEssayViewController.swift */; };
+		55D94D161CD997D800B8DDC2 /* JENReadSerialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D151CD997D800B8DDC2 /* JENReadSerialViewController.swift */; };
+		55D94D181CD997EC00B8DDC2 /* JENReadQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D171CD997EC00B8DDC2 /* JENReadQuestionViewController.swift */; };
+		55D94D1B1CD9999900B8DDC2 /* JENReadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D191CD9999900B8DDC2 /* JENReadCell.swift */; };
+		55D94D1C1CD9999900B8DDC2 /* JENReadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D94D1A1CD9999900B8DDC2 /* JENReadCell.xib */; };
+		55D94D1E1CD9A43900B8DDC2 /* JENReadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D1D1CD9A43900B8DDC2 /* JENReadItem.swift */; };
+		55D94D201CD9A65E00B8DDC2 /* JENAuthorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D1F1CD9A65E00B8DDC2 /* JENAuthorItem.swift */; };
+		55D94D221CD9C0CF00B8DDC2 /* JENReadPastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D211CD9C0CF00B8DDC2 /* JENReadPastListViewController.swift */; };
+		55D94D241CD9C74700B8DDC2 /* JENReadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D231CD9C74700B8DDC2 /* JENReadDetailViewController.swift */; };
+		55D94D261CD9CB5000B8DDC2 /* JENEssayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D251CD9CB5000B8DDC2 /* JENEssayDetailViewController.swift */; };
+		55D94D281CD9CB5D00B8DDC2 /* JENSerialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D271CD9CB5D00B8DDC2 /* JENSerialDetailViewController.swift */; };
+		55D94D2A1CD9CB7000B8DDC2 /* JENQuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D291CD9CB7000B8DDC2 /* JENQuestionDetailViewController.swift */; };
+		55D94D2C1CD9CCA600B8DDC2 /* JENCommentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D2B1CD9CCA600B8DDC2 /* JENCommentItem.swift */; };
+		55D94D2E1CD9CCF300B8DDC2 /* JENReadDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D2D1CD9CCF300B8DDC2 /* JENReadDetailItem.swift */; };
+		55D94D301CD9D18000B8DDC2 /* JENReadDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D2F1CD9D18000B8DDC2 /* JENReadDetailHeaderView.swift */; };
+		55D94D321CD9D18900B8DDC2 /* JENReadDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D94D311CD9D18900B8DDC2 /* JENReadDetailHeaderView.xib */; };
+		55F7E4DE1CD47F01002BA01A /* JENReadCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7E4DD1CD47F01002BA01A /* JENReadCarouselView.swift */; };
+		55F7E4E11CD47FC3002BA01A /* JENConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7E4E01CD47FC3002BA01A /* JENConst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,26 +64,52 @@
 		55250B3B1CD1EB6800593404 /* JENHomeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENHomeDetailViewController.xib; sourceTree = "<group>"; };
 		55250B3E1CD1FEC800593404 /* JENPastListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENPastListViewController.swift; sourceTree = "<group>"; };
 		55250B401CD2067700593404 /* JENHomePastListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomePastListViewController.swift; sourceTree = "<group>"; };
-		55250B431CD20AED00593404 /* JENTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTableViewExtension.swift; sourceTree = "<group>"; };
-		55250B451CD20ECA00593404 /* JENMoreSubTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMoreSubTotalViewController.swift; sourceTree = "<group>"; };
+		55250B431CD20AED00593404 /* JENExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENExtension.swift; sourceTree = "<group>"; };
+		553FD4951CDA2B2A00BC0142 /* JENReadToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadToolBarView.swift; sourceTree = "<group>"; };
+		553FD4971CDA2B3400BC0142 /* JENReadToolBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENReadToolBarView.xib; sourceTree = "<group>"; };
 		5554A00F1CD1959100295948 /* JENHomeSubTotalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomeSubTotalItem.swift; sourceTree = "<group>"; };
 		5554A0111CD1AC6D00295948 /* JENHomeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomeTableCell.swift; sourceTree = "<group>"; };
 		5554A0121CD1AC6D00295948 /* JENHomeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENHomeTableCell.xib; sourceTree = "<group>"; };
 		5554A0151CD1C29200295948 /* JENTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTableFooterView.swift; sourceTree = "<group>"; };
 		5554A0171CD1C2A400295948 /* JENTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENTableFooterView.xib; sourceTree = "<group>"; };
 		558FD9231CD0C95C00F3EA63 /* ONE_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ONE_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		558FD9301CD0C95C00F3EA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		558FD9321CD0C95C00F3EA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		558FD9531CD0D41E00F3EA63 /* JENHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomeViewController.swift; sourceTree = "<group>"; };
 		558FD9551CD0D43400F3EA63 /* JENMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMusicViewController.swift; sourceTree = "<group>"; };
-		558FD9571CD0D45000F3EA63 /* JENReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadViewController.swift; sourceTree = "<group>"; };
 		558FD9591CD0D45800F3EA63 /* JENVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENVideoViewController.swift; sourceTree = "<group>"; };
 		558FD95B1CD0D47600F3EA63 /* JENNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENNavigationController.swift; sourceTree = "<group>"; };
 		558FD95D1CD0D48800F3EA63 /* JENTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTabBarController.swift; sourceTree = "<group>"; };
 		558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENLoadData.swift; sourceTree = "<group>"; };
 		558FD9631CD0E1AB00F3EA63 /* JENNetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENNetWorkTool.swift; sourceTree = "<group>"; };
+		559D1DA81CD76A9800CA6CB3 /* JENReadCarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadCarouselItem.swift; sourceTree = "<group>"; };
+		55D94CFD1CD988D100B8DDC2 /* JENTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTitleButton.swift; sourceTree = "<group>"; };
+		55D94D031CD996B500B8DDC2 /* JENReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadViewController.swift; sourceTree = "<group>"; };
+		55D94D081CD9972600B8DDC2 /* JENReadCarouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadCarouseCell.swift; sourceTree = "<group>"; };
+		55D94D091CD9972600B8DDC2 /* JENReadCarouseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENReadCarouseCell.xib; sourceTree = "<group>"; };
+		55D94D0D1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadCarouseDetailViewController.swift; sourceTree = "<group>"; };
+		55D94D0E1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENReadCarouseDetailViewController.xib; sourceTree = "<group>"; };
+		55D94D111CD9979D00B8DDC2 /* JENReadTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadTableViewController.swift; sourceTree = "<group>"; };
+		55D94D131CD997C700B8DDC2 /* JENReadEssayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadEssayViewController.swift; sourceTree = "<group>"; };
+		55D94D151CD997D800B8DDC2 /* JENReadSerialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadSerialViewController.swift; sourceTree = "<group>"; };
+		55D94D171CD997EC00B8DDC2 /* JENReadQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadQuestionViewController.swift; sourceTree = "<group>"; };
+		55D94D191CD9999900B8DDC2 /* JENReadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadCell.swift; sourceTree = "<group>"; };
+		55D94D1A1CD9999900B8DDC2 /* JENReadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENReadCell.xib; sourceTree = "<group>"; };
+		55D94D1D1CD9A43900B8DDC2 /* JENReadItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadItem.swift; sourceTree = "<group>"; };
+		55D94D1F1CD9A65E00B8DDC2 /* JENAuthorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENAuthorItem.swift; sourceTree = "<group>"; };
+		55D94D211CD9C0CF00B8DDC2 /* JENReadPastListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadPastListViewController.swift; sourceTree = "<group>"; };
+		55D94D231CD9C74700B8DDC2 /* JENReadDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadDetailViewController.swift; sourceTree = "<group>"; };
+		55D94D251CD9CB5000B8DDC2 /* JENEssayDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENEssayDetailViewController.swift; sourceTree = "<group>"; };
+		55D94D271CD9CB5D00B8DDC2 /* JENSerialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENSerialDetailViewController.swift; sourceTree = "<group>"; };
+		55D94D291CD9CB7000B8DDC2 /* JENQuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENQuestionDetailViewController.swift; sourceTree = "<group>"; };
+		55D94D2B1CD9CCA600B8DDC2 /* JENCommentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENCommentItem.swift; sourceTree = "<group>"; };
+		55D94D2D1CD9CCF300B8DDC2 /* JENReadDetailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadDetailItem.swift; sourceTree = "<group>"; };
+		55D94D2F1CD9D18000B8DDC2 /* JENReadDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadDetailHeaderView.swift; sourceTree = "<group>"; };
+		55D94D311CD9D18900B8DDC2 /* JENReadDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENReadDetailHeaderView.xib; sourceTree = "<group>"; };
+		55F7E4DD1CD47F01002BA01A /* JENReadCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadCarouselView.swift; sourceTree = "<group>"; };
+		55F7E4E01CD47FC3002BA01A /* JENConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENConst.swift; sourceTree = "<group>"; };
 		6BD509C900744CEF6CF6593A /* Pods-ONE_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONE_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ONE_Swift/Pods-ONE_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		93771E9195B48F26BDA7BC21 /* Pods_ONE_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ONE_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,7 +146,7 @@
 		55250B421CD20AD400593404 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				55250B431CD20AED00593404 /* JENTableViewExtension.swift */,
+				55250B431CD20AED00593404 /* JENExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -121,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				558FD9381CD0CA2100F3EA63 /* Classes */,
-				558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */,
 				558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */,
 				558FD92F1CD0C95C00F3EA63 /* LaunchScreen.storyboard */,
 				558FD9321CD0C95C00F3EA63 /* Info.plist */,
@@ -133,8 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				558FD9391CD0CA2100F3EA63 /* Home-首页 */,
-				558FD9411CD0CA2100F3EA63 /* Music-音乐 */,
 				558FD9471CD0CA2100F3EA63 /* Reading-阅读 */,
+				558FD9411CD0CA2100F3EA63 /* Music-音乐 */,
 				558FD94F1CD0CA2100F3EA63 /* Video-视频 */,
 				558FD93D1CD0CA2100F3EA63 /* Main-主要 */,
 				558FD94B1CD0CA2100F3EA63 /* Search-搜索 */,
@@ -160,7 +211,6 @@
 				55250B3A1CD1EB6800593404 /* JENHomeDetailViewController.swift */,
 				55250B3B1CD1EB6800593404 /* JENHomeDetailViewController.xib */,
 				55250B401CD2067700593404 /* JENHomePastListViewController.swift */,
-				55250B451CD20ECA00593404 /* JENMoreSubTotalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +255,8 @@
 		558FD93F1CD0CA2100F3EA63 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55D94D1F1CD9A65E00B8DDC2 /* JENAuthorItem.swift */,
+				55D94D2B1CD9CCA600B8DDC2 /* JENCommentItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +266,7 @@
 			children = (
 				5554A0151CD1C29200295948 /* JENTableFooterView.swift */,
 				5554A0171CD1C2A400295948 /* JENTableFooterView.xib */,
+				55D94CFD1CD988D100B8DDC2 /* JENTitleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +306,8 @@
 		558FD9451CD0CA2100F3EA63 /* Other-其他 */ = {
 			isa = PBXGroup;
 			children = (
+				558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */,
+				55F7E4DF1CD47FB2002BA01A /* Const */,
 				55250B421CD20AD400593404 /* Extension */,
 				558FD9461CD0CA2100F3EA63 /* Tools */,
 			);
@@ -281,7 +336,8 @@
 		558FD9481CD0CA2100F3EA63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				558FD9571CD0D45000F3EA63 /* JENReadViewController.swift */,
+				55D94CFF1CD996B500B8DDC2 /* Detail */,
+				55D94D001CD996B500B8DDC2 /* Read */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,6 +345,9 @@
 		558FD9491CD0CA2100F3EA63 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55D94D1D1CD9A43900B8DDC2 /* JENReadItem.swift */,
+				55D94D2D1CD9CCF300B8DDC2 /* JENReadDetailItem.swift */,
+				559D1DA81CD76A9800CA6CB3 /* JENReadCarouselItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +355,9 @@
 		558FD94A1CD0CA2100F3EA63 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55D94D071CD9972600B8DDC2 /* Cell */,
+				55D94D0A1CD9972600B8DDC2 /* Detail */,
+				55F7E4DD1CD47F01002BA01A /* JENReadCarouselView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,6 +425,62 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		55D94CFF1CD996B500B8DDC2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				55D94D0D1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.swift */,
+				55D94D0E1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.xib */,
+				55D94D231CD9C74700B8DDC2 /* JENReadDetailViewController.swift */,
+				55D94D251CD9CB5000B8DDC2 /* JENEssayDetailViewController.swift */,
+				55D94D271CD9CB5D00B8DDC2 /* JENSerialDetailViewController.swift */,
+				55D94D291CD9CB7000B8DDC2 /* JENQuestionDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		55D94D001CD996B500B8DDC2 /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				55D94D031CD996B500B8DDC2 /* JENReadViewController.swift */,
+				55D94D111CD9979D00B8DDC2 /* JENReadTableViewController.swift */,
+				55D94D131CD997C700B8DDC2 /* JENReadEssayViewController.swift */,
+				55D94D151CD997D800B8DDC2 /* JENReadSerialViewController.swift */,
+				55D94D171CD997EC00B8DDC2 /* JENReadQuestionViewController.swift */,
+				55D94D211CD9C0CF00B8DDC2 /* JENReadPastListViewController.swift */,
+			);
+			path = Read;
+			sourceTree = "<group>";
+		};
+		55D94D071CD9972600B8DDC2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				55D94D081CD9972600B8DDC2 /* JENReadCarouseCell.swift */,
+				55D94D091CD9972600B8DDC2 /* JENReadCarouseCell.xib */,
+				55D94D191CD9999900B8DDC2 /* JENReadCell.swift */,
+				55D94D1A1CD9999900B8DDC2 /* JENReadCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		55D94D0A1CD9972600B8DDC2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				55D94D2F1CD9D18000B8DDC2 /* JENReadDetailHeaderView.swift */,
+				55D94D311CD9D18900B8DDC2 /* JENReadDetailHeaderView.xib */,
+				553FD4951CDA2B2A00BC0142 /* JENReadToolBarView.swift */,
+				553FD4971CDA2B3400BC0142 /* JENReadToolBarView.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		55F7E4DF1CD47FB2002BA01A /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				55F7E4E01CD47FC3002BA01A /* JENConst.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -427,10 +545,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5554A0181CD1C2A400295948 /* JENTableFooterView.xib in Resources */,
+				55D94D1C1CD9999900B8DDC2 /* JENReadCell.xib in Resources */,
+				55D94D321CD9D18900B8DDC2 /* JENReadDetailHeaderView.xib in Resources */,
 				558FD9311CD0C95C00F3EA63 /* LaunchScreen.storyboard in Resources */,
+				55D94D0C1CD9972600B8DDC2 /* JENReadCarouseCell.xib in Resources */,
 				558FD92E1CD0C95C00F3EA63 /* Assets.xcassets in Resources */,
 				55250B3D1CD1EB6800593404 /* JENHomeDetailViewController.xib in Resources */,
 				5554A0141CD1AC6D00295948 /* JENHomeTableCell.xib in Resources */,
+				553FD4981CDA2B3400BC0142 /* JENReadToolBarView.xib in Resources */,
+				55D94D101CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,23 +612,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D94D141CD997C700B8DDC2 /* JENReadEssayViewController.swift in Sources */,
+				55D94D061CD996B500B8DDC2 /* JENReadViewController.swift in Sources */,
+				55D94D301CD9D18000B8DDC2 /* JENReadDetailHeaderView.swift in Sources */,
 				558FD95A1CD0D45800F3EA63 /* JENVideoViewController.swift in Sources */,
 				55250B411CD2067700593404 /* JENHomePastListViewController.swift in Sources */,
+				55D94D201CD9A65E00B8DDC2 /* JENAuthorItem.swift in Sources */,
+				55D94D2E1CD9CCF300B8DDC2 /* JENReadDetailItem.swift in Sources */,
+				55D94D1B1CD9999900B8DDC2 /* JENReadCell.swift in Sources */,
 				558FD95E1CD0D48800F3EA63 /* JENTabBarController.swift in Sources */,
-				55250B441CD20AED00593404 /* JENTableViewExtension.swift in Sources */,
+				55F7E4DE1CD47F01002BA01A /* JENReadCarouselView.swift in Sources */,
+				55250B441CD20AED00593404 /* JENExtension.swift in Sources */,
 				558FD9561CD0D43400F3EA63 /* JENMusicViewController.swift in Sources */,
-				55250B461CD20ECA00593404 /* JENMoreSubTotalViewController.swift in Sources */,
+				559D1DA91CD76A9800CA6CB3 /* JENReadCarouselItem.swift in Sources */,
 				558FD9641CD0E1AB00F3EA63 /* JENNetWorkTool.swift in Sources */,
+				55D94D221CD9C0CF00B8DDC2 /* JENReadPastListViewController.swift in Sources */,
 				558FD95C1CD0D47600F3EA63 /* JENNavigationController.swift in Sources */,
+				55D94D121CD9979D00B8DDC2 /* JENReadTableViewController.swift in Sources */,
+				55D94D0B1CD9972600B8DDC2 /* JENReadCarouseCell.swift in Sources */,
 				5554A0131CD1AC6D00295948 /* JENHomeTableCell.swift in Sources */,
 				558FD9541CD0D41E00F3EA63 /* JENHomeViewController.swift in Sources */,
+				55D94D1E1CD9A43900B8DDC2 /* JENReadItem.swift in Sources */,
+				55D94D161CD997D800B8DDC2 /* JENReadSerialViewController.swift in Sources */,
 				558FD9621CD0DFE100F3EA63 /* JENLoadData.swift in Sources */,
+				55D94D261CD9CB5000B8DDC2 /* JENEssayDetailViewController.swift in Sources */,
 				55250B3C1CD1EB6800593404 /* JENHomeDetailViewController.swift in Sources */,
+				55D94D181CD997EC00B8DDC2 /* JENReadQuestionViewController.swift in Sources */,
+				55D94D241CD9C74700B8DDC2 /* JENReadDetailViewController.swift in Sources */,
+				55D94D2A1CD9CB7000B8DDC2 /* JENQuestionDetailViewController.swift in Sources */,
+				553FD4961CDA2B2A00BC0142 /* JENReadToolBarView.swift in Sources */,
 				5554A0161CD1C29200295948 /* JENTableFooterView.swift in Sources */,
+				55D94D2C1CD9CCA600B8DDC2 /* JENCommentItem.swift in Sources */,
+				55D94D281CD9CB5D00B8DDC2 /* JENSerialDetailViewController.swift in Sources */,
 				55250B3F1CD1FEC800593404 /* JENPastListViewController.swift in Sources */,
 				5554A0101CD1959100295948 /* JENHomeSubTotalItem.swift in Sources */,
-				558FD9581CD0D45000F3EA63 /* JENReadViewController.swift in Sources */,
+				55D94D0F1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.swift in Sources */,
 				558FD9271CD0C95C00F3EA63 /* AppDelegate.swift in Sources */,
+				55D94CFE1CD988D100B8DDC2 /* JENTitleButton.swift in Sources */,
+				55F7E4E11CD47FC3002BA01A /* JENConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,7 +754,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ONE_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.ONESwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -623,7 +767,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ONE_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.ONESwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";

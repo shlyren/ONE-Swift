@@ -33,25 +33,22 @@ extension JENNetWorkTool {
         let successCallBack = { (task : NSURLSessionDataTask, responseObject : AnyObject?) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
             SVProgressHUD.dismiss()
+           
             completion(responseObject: responseObject, error: nil)
         }
         /// 失败的闭包
         let failureCallBack = { (task : NSURLSessionDataTask?, error : NSError) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
             SVProgressHUD.dismiss()
-            
             completion(responseObject: nil, error: error)
-            
         }
         
         
         if requestType == .GET {
 
-            GET(url, parameters: nil, progress: nil, success: successCallBack, failure: failureCallBack)
-            
+            GET(url, parameters: parameters, progress: nil, success: successCallBack, failure: failureCallBack)
         }else {
             POST(url, parameters: parameters, progress: nil, success: successCallBack, failure: failureCallBack)
-
         }
     
     }

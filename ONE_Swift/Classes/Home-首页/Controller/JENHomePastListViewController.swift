@@ -11,9 +11,11 @@ import UIKit
 class JENHomePastListViewController: JENPastListViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        
         let moreSubTotalVc = JENHomeViewController()
         moreSubTotalVc.urlString = "bymonth/" + pastLists[indexPath.row]
-        moreSubTotalVc.title = "往期列表"
+        moreSubTotalVc.title = pastLists[indexPath.row]
         navigationController?.pushViewController(moreSubTotalVc, animated: true)
     }
 

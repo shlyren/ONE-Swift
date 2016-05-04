@@ -29,19 +29,15 @@ class JENHomeTableCell: UITableViewCell {
             hp_contentLabel.text = homeSubTotal.hp_content
             hp_authorLabel.text = homeSubTotal.hp_author
             hp_makeLabel.text = homeSubTotal.hp_makettime
-            hp_img_url.sd_setImageWithURL(NSURL(string: homeSubTotal.hp_img_url), placeholderImage: UIImage(named: "home"))
-
+            
+            guard let img_url = homeSubTotal.hp_img_url else {return}
+            hp_img_url.sd_setImageWithURL(NSURL(string: img_url), placeholderImage: UIImage(named: "home"))
         }
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .None
-        
-        
     }
-    
-    
     
 }

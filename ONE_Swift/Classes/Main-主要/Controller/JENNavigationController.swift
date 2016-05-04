@@ -14,7 +14,7 @@ class JENNavigationController: UINavigationController, UIGestureRecognizerDelega
         super.viewDidLoad()
         interactivePopGestureRecognizer?.enabled = false
         
-        let pan = UIPanGestureRecognizer(target: self.interactivePopGestureRecognizer?.delegate, action: "handleNavigationTransition:")
+        let pan = UIPanGestureRecognizer(target: self.interactivePopGestureRecognizer?.delegate, action: #selector(JENNavigationController.handleNavigationTransition(_:)))
         
         pan.delegate = self
         view.addGestureRecognizer(pan)
@@ -31,15 +31,43 @@ class JENNavigationController: UINavigationController, UIGestureRecognizerDelega
 
         } else {
             
-            viewController.navigationItem.leftBarButtonItem = setupNavItem(image: "nav_search_default", frame: CGRectMake(0, 15, 20, 20), action: "leftBtnClick")
+            viewController.navigationItem.leftBarButtonItem = setupNavItem(image: "nav_search_default", frame: CGRectMake(0, 15, 20, 20), action: #selector(JENNavigationController.leftBtnClick))
             
-            viewController.navigationItem.rightBarButtonItem = setupNavItem(image: "nav_me_default", frame: CGRectMake(30, 15, 20, 20), action: "rightBtnClick")
+            viewController.navigationItem.rightBarButtonItem = setupNavItem(image: "nav_me_default", frame: CGRectMake(30, 15, 20, 20), action: #selector(JENNavigationController.rightBtnClick))
         }
         
         super.pushViewController(viewController, animated: animated)
     }
     
+    // MARK:- 手势返回
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return childViewControllers.count > 1
+    }
     
+    @objc private func handleNavigationTransition(pan : UIPanGestureRecognizer) {}
+
+}
+
+// MARK: - 按钮点击
+extension JENNavigationController {
+    // MARK:-  返回按钮点击事件
+    @objc private func backBtnClick() {
+        popViewControllerAnimated(true)
+    }
+    
+    
+    // MARK:- 按钮点击事件
+    @objc private func leftBtnClick() {
+        print("左边按钮点击")
+    }
+    
+    @objc private func rightBtnClick() {
+        print("右边按钮点击")
+    }
+}
+
+// MARK: - 按钮
+extension JENNavigationController {
     // MARK:- 返回按钮
     private func setupBackBtn() -> UIBarButtonItem {
         
@@ -48,16 +76,11 @@ class JENNavigationController: UINavigationController, UIGestureRecognizerDelega
         backBtn.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
         backBtn.setImage(UIImage(named: "back"), forState: .Normal)
         backBtn.sizeToFit()
-
+        
         backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
-        backBtn.addTarget(self, action: "backBtnClick", forControlEvents: .TouchUpInside)
+        backBtn.addTarget(self, action: #selector(JENNavigationController.backBtnClick), forControlEvents: .TouchUpInside)
         
         return UIBarButtonItem(customView: backBtn)
-    }
-    
-    // MARK:-  返回按钮点击事件
-    @objc private func backBtnClick() {
-        popViewControllerAnimated(true)
     }
     
     // MARK:- 导航栏按钮
@@ -74,21 +97,4 @@ class JENNavigationController: UINavigationController, UIGestureRecognizerDelega
         
         return UIBarButtonItem(customView: bigBtn)
     }
-    
-    // MARK:- 按钮点击事件
-    @objc private func leftBtnClick() {
-        print("左边按钮点击")
-    }
-    
-    @objc private func rightBtnClick() {
-        print("右边按钮点击")
-    }
-    
-    // MARK:- 手势返回
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return childViewControllers.count > 1
-    }
-    
-    @objc private func handleNavigationTransition(pan : UIPanGestureRecognizer) {}
-
 }

@@ -12,7 +12,7 @@ class JENHomeViewController: UITableViewController {
 
     var urlString = "more/0"
     private let homeTableCell = "JENHomeTableCell"
-    private var homeSubtotal = NSArray()
+    private var homeSubtotal = [JENHomeSubTotalItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,25 +25,23 @@ class JENHomeViewController: UITableViewController {
     // MARK:- 初始化view
     private func setupView() {
         tableView.registerNib(UINib(nibName: "JENHomeTableCell", bundle: nil), forCellReuseIdentifier: homeTableCell)
+        tableView.insetT = JENDefaultMargin
         tableView.rowHeight = 105.0
         tableView.separatorStyle = .None
-
         
         if navigationController?.childViewControllers.count == 1 {
-            let footerView = JENTableFooterView().footerView()
-            footerView.footerBth.addTarget(self, action: "footerBtnClick", forControlEvents: .TouchUpInside)
-            footerView.frame.size.height = 54
+            let footerView = JENTableFooterView.footerView(self, action: #selector(JENHomeViewController.footerBtnClick))
             tableView.tableFooterView = footerView
         } else {
             let footerView = UIView()
-            footerView.frame.size.height = 10
+            footerView.height = 10
             tableView.tableFooterView = footerView
         }
     }
     
     // MARK:- 加载数据
     private func loadData() {
-        JENLoadData.shareInstance.loadHomeSubtotal(urlString) { (responseObject) -> () in
+        JENLoadData.loadHomeSubtotal(urlString) { (responseObject : [JENHomeSubTotalItem]) -> () in
             
             if responseObject.count > 0 {
                 self.homeSubtotal = responseObject
@@ -53,34 +51,38 @@ class JENHomeViewController: UITableViewController {
     }
     
     // MARK:-  按钮点击事件
-    @objc func footerBtnClick() {
+    @objc private func footerBtnClick() {
         let homePastListVc = JENHomePastListViewController()
         homePastListVc.endMonth = "2012-10"
-        
         navigationController?.pushViewController(homePastListVc, animated: true)
     }
     
-    // MARK:- tableview data source
+}
+
+// MARK: - protocol
+extension JENHomeViewController {
+    // MARK: tableview data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return self.homeSubtotal.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(homeTableCell) as! JENHomeTableCell
-        cell.homeSubTotal = homeSubtotal[indexPath.row] as! JENHomeSubTotalItem
+        cell.homeSubTotal = homeSubtotal[indexPath.row] 
         return cell
     }
     
     
-    // MARK:- table view delegate
+    // MARK: table view delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let homeDetailVc = JENHomeDetailViewController()
-        homeDetailVc.homeSubTotalItem = homeSubtotal[indexPath.row] as! JENHomeSubTotalItem
+        homeDetailVc.homeSubTotalItem = homeSubtotal[indexPath.row] 
         navigationController?.pushViewController(homeDetailVc, animated: true)
     }
+    
 
 }
-
 

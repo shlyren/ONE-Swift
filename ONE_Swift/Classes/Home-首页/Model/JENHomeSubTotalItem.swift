@@ -27,17 +27,17 @@ import UIKit
  */
 
 class JENHomeSubTotalItem: NSObject {
-    var hpcontent_id = ""
-    var hp_title = ""
-    var author_id = ""
-    var hp_img_url = ""
-    //var hp_img_original_url = ""
-    var hp_author = ""
-    //var ipad_url = ""
-    var hp_content = ""
-    var hp_makettime = ""
-    //var last_update_date = ""
-    //var web_url = ""
+    var hpcontent_id : String?
+    var hp_title : String?
+    var author_id : String?
+    var hp_img_url : String?
+    //var hp_img_original_url : String?
+    var hp_author : String?
+    //var ipad_url : String?
+    var hp_content : String?
+    var hp_makettime : String?
+    //var last_update_date : String?
+    //var web_url : String?
     var praisenum = 0
     var sharenum = 0
     var commentnum = 0
