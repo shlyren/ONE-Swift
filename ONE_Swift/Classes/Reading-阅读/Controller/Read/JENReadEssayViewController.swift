@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadEssayViewController: JENReadTableViewController {
+class JENReadEssayViewController : JENReadTableViewController {
 
     override func readItems() -> [AnyObject] {
         return readList.essay
@@ -16,6 +16,7 @@ class JENReadEssayViewController: JENReadTableViewController {
 
 }
 
+// MARK: - tableView protocol
 extension JENReadEssayViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JENReadCell {
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
@@ -25,7 +26,6 @@ extension JENReadEssayViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let essayVc = JENEssayDetailViewController()
-        essayVc.title = "短篇"
         guard let detail_id = (readItems()[indexPath.row] as! JENReadEssayItem).content_id else {return}
         essayVc.detail_id = detail_id
         navigationController?.pushViewController(essayVc, animated: true)

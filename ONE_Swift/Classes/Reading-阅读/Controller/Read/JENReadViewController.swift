@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadViewController: UIViewController {
+class JENReadViewController : UIViewController {
     private var seletctedBtn = JENTitleButton()
     private let titlesView = UIView()
     private var titleLineView = UIView()
@@ -22,7 +22,7 @@ class JENReadViewController: UIViewController {
         setupCarouseView()
         setupAllChildVc()
         
-        JENLoadData.loadReadList { (responseObject : JENReadListItem) in
+        JENLoadData.loadReadList { (responseObject: JENReadListItem) in
             self.readList = responseObject
             self.setupBaseView()
         }
@@ -78,7 +78,7 @@ private extension JENReadViewController {
         view.addSubview(titlesView)
         
         /// titleLine
-        let titleLineH : CGFloat = 2
+        let titleLineH: CGFloat = 2
         let titleLineY = titlesView.height - titleLineH
         titleLineView.backgroundColor = seletctedBtn.titleColorForState(.Selected)
         titleLineView.frame = CGRectMake(0, titleLineY, 0, titleLineH);
@@ -94,7 +94,7 @@ private extension JENReadViewController {
 // MARK: - 事件处理
 private extension JENReadViewController {
     // MARK: 标题按钮点击事件
-    @objc private func titleBtnClick(btn : JENTitleButton) {
+    @objc private func titleBtnClick(btn: JENTitleButton) {
         if seletctedBtn == btn {return}
         seletctedBtn.selected = false
         btn.selected = true
@@ -104,7 +104,7 @@ private extension JENReadViewController {
             self.titleLineView.centerX = btn.centerX;
             self.titleLineView.width = btn.titleLabel!.width;
             self.scrollView.offsetX = CGFloat(btn.tag) * self.scrollView.width
-        }) { (finished : Bool) in
+        }) { (finished: Bool) in
             let childVc  = self.childViewControllers[btn.tag] as! JENReadTableViewController;
             childVc.view.frame = self.scrollView.bounds
             self.scrollView.addSubview(childVc.view)

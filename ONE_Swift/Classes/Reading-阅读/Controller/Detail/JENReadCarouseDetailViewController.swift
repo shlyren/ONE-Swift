@@ -12,7 +12,7 @@ class JENReadCarouseDetailViewController : UIViewController {
     
     // MARK: - lazy load
         /// 头部Label
-    private lazy var headerLabel : UILabel = {
+    private lazy var headerLabel: UILabel = {
         let headerLabel = UILabel()
         headerLabel.backgroundColor = UIColor.clearColor()
         headerLabel.textColor = UIColor.whiteColor()
@@ -22,7 +22,7 @@ class JENReadCarouseDetailViewController : UIViewController {
         return headerLabel
     }()
         /// 尾部Label
-    private lazy var footerLabel : UILabel = {
+    private lazy var footerLabel: UILabel = {
         let footerLabel = UILabel()
         footerLabel.backgroundColor = UIColor.clearColor()
         footerLabel.textColor = UIColor.whiteColor()
@@ -34,7 +34,7 @@ class JENReadCarouseDetailViewController : UIViewController {
         return footerLabel
     }()
         ///  尾部View
-    private lazy var footerView : UIView = {
+    private lazy var footerView: UIView = {
         let footerView = UIView()
         footerView.height = 500
         footerView.backgroundColor = UIColor.clearColor()
@@ -45,7 +45,7 @@ class JENReadCarouseDetailViewController : UIViewController {
     private let readCarouseCellId = "ReadCarouseCell"
     
         /// 轮播的模型数组
-    private lazy var carouselDetailItems : [JENReadCarouselItem] = {
+    private lazy var carouselDetailItems: [JENReadCarouselItem] = {
         let carouselDetailItems = [JENReadCarouselItem]()
         return carouselDetailItems
     }()
@@ -59,9 +59,7 @@ class JENReadCarouseDetailViewController : UIViewController {
             headerLabel.sizeToFit()
             footerLabel.sizeToFit()
             
-            guard let carousel_id = readCarouseListItem.carousel_id else {
-                return
-            }
+            guard let carousel_id = readCarouseListItem.carousel_id else { return }
             JENLoadData.loadReadCarouselDetail(carousel_id) { (responseObject) in
                 if responseObject.count > 0 {
                     self.carouselDetailItems = responseObject
@@ -115,18 +113,15 @@ extension JENReadCarouseDetailViewController : UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailItem = carouselDetailItems[indexPath.row]
-        var readDetailVc : JENReadDetailViewController?
+        var readDetailVc: JENReadDetailViewController?
         
         switch detailItem.readType {
             case .Essay:
                 readDetailVc = JENEssayDetailViewController()
-                readDetailVc?.title = "短篇"
             case .Serial:
                 readDetailVc = JENSerialDetailViewController()
-                readDetailVc?.title = "连载"
             case .Question:
                 readDetailVc = JENQuestionDetailViewController()
-                readDetailVc?.title = "问答"
             default: break
         }
         

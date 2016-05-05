@@ -9,10 +9,12 @@
 import UIKit
 import SDWebImage
 
-class JENReadCarouselCell: UICollectionViewCell {
+class JENReadCarouselCell : UICollectionViewCell {
 
-    private lazy var imageView : UIImageView = {
-        return UIImageView(frame: self.bounds)
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView(frame: self.bounds)
+        imageView.image = UIImage(named: "top10")
+        return imageView
     }()
     
     override init(frame: CGRect) {
@@ -25,17 +27,16 @@ class JENReadCarouselCell: UICollectionViewCell {
     }
 }
 
-class JENReadCarouselView: UIView {
+class JENReadCarouselView : UIView {
 
-    private let pageControlHeight : CGFloat = 30
+    private let pageControlHeight: CGFloat = 30
     private let readCarouselCell = "JENReadCarouselCell"
     private let maxSectionNum = 10
     
-    private var timer : NSTimer?
-    
+    private var timer: NSTimer?
     private var readCarouseItems = [JENReadCarouselListItem]()
     
-    private lazy var collectionView : UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = self.bounds.size
         layout.minimumLineSpacing = 0
@@ -54,7 +55,7 @@ class JENReadCarouselView: UIView {
         return collectionView
     }()
 
-    private lazy var pageControl : UIPageControl = {
+    private lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl(frame: CGRectMake(0, self.height - self.pageControlHeight, self.width, self.pageControlHeight))
         pageControl.currentPageIndicatorTintColor = JENDefaultColor
         pageControl.pageIndicatorTintColor = UIColor(white: 0.9, alpha: 1)
@@ -80,7 +81,7 @@ class JENReadCarouselView: UIView {
         collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: self.maxSectionNum / 2), atScrollPosition: .Left, animated: false)
         collectionView.performBatchUpdates({
             self.collectionView.reloadSections(NSIndexSet(index: 0))
-        }, completion: { (finished : Bool) in
+        }, completion: { (finished: Bool) in
             self.startTimer()
         })
     }
@@ -120,7 +121,7 @@ extension JENReadCarouselView {
 }
 
 
-// MARK: - collectionView 协议
+// MARK: - collectionView protocol
 extension JENReadCarouselView : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -168,7 +169,7 @@ extension JENReadCarouselView : UICollectionViewDataSource, UICollectionViewDele
 }
 
 // MARK: - UINavigationControllerDelegate
-extension JENReadCarouselView : UINavigationControllerDelegate {
+extension JENReadCarouselView: UINavigationControllerDelegate {
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         
         navigationController.setNavigationBarHidden(viewController.isKindOfClass(JENReadCarouseDetailViewController), animated: true)

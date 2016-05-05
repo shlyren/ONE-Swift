@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadQuestionViewController: JENReadTableViewController {
+class JENReadQuestionViewController : JENReadTableViewController {
 
     override func readItems() -> [AnyObject] {
         return readList.question
@@ -16,6 +16,7 @@ class JENReadQuestionViewController: JENReadTableViewController {
 
 }
 
+// MARK: - tableView protocol
 extension JENReadQuestionViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JENReadCell {
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
@@ -25,8 +26,6 @@ extension JENReadQuestionViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let questionVc = JENQuestionDetailViewController()
-        questionVc.title = "问答"
-        
         guard let question_id = (readItems()[indexPath.row] as! JENReadQuestionItem).question_id else {
             return
         }

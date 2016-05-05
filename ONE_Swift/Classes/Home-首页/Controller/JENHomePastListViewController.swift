@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENHomePastListViewController: JENPastListViewController {
+class JENHomePastListViewController : JENPastListViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)

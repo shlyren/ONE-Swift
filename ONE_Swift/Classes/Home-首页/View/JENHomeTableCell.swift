@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class JENHomeTableCell: UITableViewCell {
+class JENHomeTableCell : UITableViewCell {
     
     
     @IBOutlet weak var hp_titleLabel: UILabel!
@@ -30,14 +30,17 @@ class JENHomeTableCell: UITableViewCell {
             hp_authorLabel.text = homeSubTotal.hp_author
             hp_makeLabel.text = homeSubTotal.hp_makettime
             
-            guard let img_url = homeSubTotal.hp_img_url else {return}
+            guard let img_url = homeSubTotal.hp_img_url else {
+                hp_img_url.image = UIImage(named: "home")
+                return
+            }
             hp_img_url.sd_setImageWithURL(NSURL(string: img_url), placeholderImage: UIImage(named: "home"))
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionStyle = .None
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        selectionStyle = .None
+//    }
     
 }

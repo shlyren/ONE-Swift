@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class JENNavigationController: UINavigationController, UIGestureRecognizerDelegate {
+class JENNavigationController : UINavigationController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         interactivePopGestureRecognizer?.enabled = false
         
         let pan = UIPanGestureRecognizer(target: self.interactivePopGestureRecognizer?.delegate, action: #selector(JENNavigationController.handleNavigationTransition(_:)))
-        
         pan.delegate = self
         view.addGestureRecognizer(pan)
+    }
     
+    override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
+        SVProgressHUD.dismiss()
+        return super.popViewControllerAnimated(animated)
     }
     
     override func pushViewController(viewController: UIViewController, animated: Bool) {
@@ -39,24 +43,23 @@ class JENNavigationController: UINavigationController, UIGestureRecognizerDelega
         super.pushViewController(viewController, animated: animated)
     }
     
-    // MARK:- 手势返回
+    // MARK: 手势返回
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         return childViewControllers.count > 1
     }
     
-    @objc private func handleNavigationTransition(pan : UIPanGestureRecognizer) {}
+    @objc private func handleNavigationTransition(pan: UIPanGestureRecognizer) {}
 
 }
 
 // MARK: - 按钮点击
-extension JENNavigationController {
-    // MARK:-  返回按钮点击事件
+private extension JENNavigationController {
+    // MARK: 返回按钮点击事件
     @objc private func backBtnClick() {
         popViewControllerAnimated(true)
     }
     
-    
-    // MARK:- 按钮点击事件
+    // MARK: 按钮点击事件
     @objc private func leftBtnClick() {
         print("左边按钮点击")
     }
@@ -67,9 +70,9 @@ extension JENNavigationController {
 }
 
 // MARK: - 按钮
-extension JENNavigationController {
-    // MARK:- 返回按钮
-    private func setupBackBtn() -> UIBarButtonItem {
+private extension JENNavigationController {
+    // MARK: 返回按钮
+    func setupBackBtn() -> UIBarButtonItem {
         
         let backBtn = UIButton(type: .Custom)
         backBtn.setTitle("返回", forState: .Normal)
@@ -83,8 +86,8 @@ extension JENNavigationController {
         return UIBarButtonItem(customView: backBtn)
     }
     
-    // MARK:- 导航栏按钮
-    private func setupNavItem(image image : String, frame : CGRect, action : Selector) -> (UIBarButtonItem) {
+    // MARK: 导航栏按钮
+    func setupNavItem(image image: String, frame: CGRect, action: Selector) -> (UIBarButtonItem) {
         
         let bigBtn = UIButton(frame: CGRectMake(0, 0, 50, 50))
         let smallBtn = UIButton(frame: frame)

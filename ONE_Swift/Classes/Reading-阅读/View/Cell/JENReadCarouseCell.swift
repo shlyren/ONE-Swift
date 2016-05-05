@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadCarouseCell: UITableViewCell {
+class JENReadCarouseCell : UITableViewCell {
     /// 标题
     @IBOutlet private weak var titleLabel: UILabel!
     /// 作者
@@ -16,12 +16,10 @@ class JENReadCarouseCell: UITableViewCell {
     /// 内容
     @IBOutlet private weak var introductionLabel: UILabel!
     
-    var rowHeight : CGFloat {
-        get {
-            layoutIfNeeded()
-            let  height = titleLabel.height + 5 + authorLabel.height + JENDefaultMargin + introductionLabel.height + 30
-            return height
-        }
+    var rowHeight: CGFloat {
+        layoutIfNeeded()
+        let  height = titleLabel.height + 5 + authorLabel.height + JENDefaultMargin + introductionLabel.height + 30
+        return height
     }
     
     var carouselItem = JENReadCarouselItem() {

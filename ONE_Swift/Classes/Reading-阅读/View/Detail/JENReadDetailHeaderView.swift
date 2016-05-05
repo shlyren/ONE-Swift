@@ -9,17 +9,10 @@
 import UIKit
 import SDWebImage
 
-typealias ContentChangBlock = (height : CGFloat?, num : (praisenum : Int, sharenum : Int, commentnum : Int)) ->()
+typealias ContentChangBlock = (height: CGFloat?, num: (praisenum: Int, sharenum: Int, commentnum: Int)) ->()
 
-class JENReadDetailHeaderView: UIView {
+class JENReadDetailHeaderView : UIView {
     
-    
-//    private lazy var toolBar : JENReadToolBarView = {
-//        let toolBar = JENReadToolBarView.toolBarView(readType, detail_id: detail_id)
-//
-//        return toolBar
-//    }()
-
     var readType = JENReadType.Unknow {
         didSet {
             if readType == .Essay { loadEssayData() }
@@ -32,12 +25,6 @@ class JENReadDetailHeaderView: UIView {
     
     deinit {
         print("readHeader == deinit")
-    }
-    
-    private var contentChangBlock: ContentChangBlock?
-
-    func contentChang(contentChangBlock: ContentChangBlock) {
-        self.contentChangBlock = contentChangBlock
     }
     
 // MARK: - 私有属性
@@ -58,13 +45,18 @@ class JENReadDetailHeaderView: UIView {
     @IBOutlet private weak var descLabel:               UILabel!
     
 // MARK: 问题 headerView
-    @IBOutlet private weak var questionTitleLabel :     UILabel!
-    @IBOutlet private weak var questionContentLabel :   UILabel!
-    @IBOutlet private weak var answerTitleLabel :       UILabel!
-    @IBOutlet private weak var answerContentLabel :     UILabel!
-    @IBOutlet private weak var q_charegeEdtLabel :      UILabel!
-    @IBOutlet private weak var questionMaketimeLabel :  UILabel!
+    @IBOutlet private weak var questionTitleLabel:     UILabel!
+    @IBOutlet private weak var questionContentLabel:   UILabel!
+    @IBOutlet private weak var answerTitleLabel:       UILabel!
+    @IBOutlet private weak var answerContentLabel:     UILabel!
+    @IBOutlet private weak var q_charegeEdtLabel:      UILabel!
+    @IBOutlet private weak var questionMaketimeLabel:  UILabel!
     
+    private var contentChangBlock: ContentChangBlock?
+    
+    func contentChang(contentChangBlock: ContentChangBlock) {
+        self.contentChangBlock = contentChangBlock
+    }
 
 }
 
@@ -82,7 +74,7 @@ extension JENReadDetailHeaderView {
             self.chargeEdtLabel.text         = essay.hp_author_introduce
             
             if let web_url = essay.author.first?.web_url {
-                self.iconImgView.sd_setImageWithURL(NSURL(string: web_url), placeholderImage: JENAuthorPlaceholderImage, completed: { (image : UIImage?, _, _, _) in
+                self.iconImgView.sd_setImageWithURL(NSURL(string: web_url), placeholderImage: JENAuthorPlaceholderImage, completed: { (image: UIImage?, _, _, _) in
                     guard let image = image else {return}
                     self.iconImgView.image       = image.circleImage()
                     self.bottomIconImgView.image = image.circleImage()
@@ -116,13 +108,11 @@ extension JENReadDetailHeaderView {
             self.chargeEdtLabel.text         = serial.charge_edt;
             
             if let webUrl = serial.author.web_url {
-                self.iconImgView.sd_setImageWithURL(NSURL(string: webUrl), placeholderImage: JENAuthorPlaceholderImage, completed: { (image : UIImage!, _, _, _) in
+                self.iconImgView.sd_setImageWithURL(NSURL(string: webUrl), placeholderImage: JENAuthorPlaceholderImage, completed: { (image: UIImage!, _, _, _) in
                     self.iconImgView.image       = image.circleImage()
                     self.bottomIconImgView.image = image.circleImage()
                 })
             }
-            
-           
             
             self.bottomNameLabel.text        = self.nameLabel.text;
             self.weiboLabel.text             = serial.author.wb_name

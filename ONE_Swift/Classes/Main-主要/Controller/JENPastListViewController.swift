@@ -8,20 +8,21 @@
 
 import UIKit
 
-class JENPastListViewController: UITableViewController {
+class JENPastListViewController : UITableViewController {
 
     var endMonth = ""
-    
-    var pastLists = [String]()
+    var pastLists: [String] {
+        get {
+            return arrayFromStr(endMonth)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "往期列表"
-        
-        pastLists = arrayFromStr(endMonth)
     }
     
-    private func arrayFromStr(endDate : String) -> [String] {
+    private func arrayFromStr(endDate: String) -> [String] {
         
         if !endDate.containsString("-") {return []}
         
@@ -52,8 +53,8 @@ class JENPastListViewController: UITableViewController {
         var resYear = currentYear
         while resYear >= endYear {
             
-            maxMonth = resYear == currentYear ? currentMonth : 12;
-            minMonth = resYear == endYear ? endMonth : 1;
+            maxMonth = resYear == currentYear ? currentMonth: 12;
+            minMonth = resYear == endYear ? endMonth: 1;
             
             var resMonth = maxMonth
             while resMonth >= minMonth {
@@ -65,8 +66,8 @@ class JENPastListViewController: UITableViewController {
         }
         
 //        for var resYear = currentYear; resYear >= endYear; resYear -= 1 {
-//            maxMonth = resYear == currentYear ? currentMonth : 12;
-//            minMonth = resYear == endYear ? endMonth : 1;
+//            maxMonth = resYear == currentYear ? currentMonth: 12;
+//            minMonth = resYear == endYear ? endMonth: 1;
 //            
 //            for var resMonth = maxMonth; resMonth >= minMonth; resMonth -= 1 {
 //                monthArr.append(String(format: "%zd-%02d", arguments: [resYear, resMonth]))
@@ -74,7 +75,6 @@ class JENPastListViewController: UITableViewController {
 //        }
         
         return monthArr
-        
     }
 
 

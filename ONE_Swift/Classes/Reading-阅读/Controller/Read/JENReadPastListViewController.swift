@@ -8,7 +8,8 @@
 
 import UIKit
 
-class JENReadPastListViewController: JENPastListViewController {
+// MARK: - tableView protocol
+class JENReadPastListViewController : JENPastListViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
     }

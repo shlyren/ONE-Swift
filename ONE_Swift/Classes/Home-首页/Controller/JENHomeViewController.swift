@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENHomeViewController: UITableViewController {
+class JENHomeViewController : UITableViewController {
 
     var urlString = "more/0"
     private let homeTableCell = "JENHomeTableCell"
@@ -28,24 +28,23 @@ class JENHomeViewController: UITableViewController {
         tableView.insetT = JENDefaultMargin
         tableView.rowHeight = 105.0
         tableView.separatorStyle = .None
-        
-        if navigationController?.childViewControllers.count == 1 {
-            let footerView = JENTableFooterView.footerView(self, action: #selector(JENHomeViewController.footerBtnClick))
-            tableView.tableFooterView = footerView
-        } else {
-            let footerView = UIView()
-            footerView.height = 10
-            tableView.tableFooterView = footerView
-        }
     }
     
     // MARK:- 加载数据
     private func loadData() {
-        JENLoadData.loadHomeSubtotal(urlString) { (responseObject : [JENHomeSubTotalItem]) -> () in
+        JENLoadData.loadHomeSubtotal(urlString) { (responseObject: [JENHomeSubTotalItem]) -> () in
             
             if responseObject.count > 0 {
                 self.homeSubtotal = responseObject
                 self.tableView.reloadData()
+            }
+            if self.navigationController?.childViewControllers.count == 1 {
+                let footerView = JENExtensionView.pastListFooterView(self, action: #selector(JENHomeViewController.footerBtnClick))
+                self.tableView.tableFooterView = footerView
+            } else {
+                let footerView = UIView()
+                footerView.height = 10
+                self.tableView.tableFooterView = footerView
             }
         }
     }
@@ -59,7 +58,7 @@ class JENHomeViewController: UITableViewController {
     
 }
 
-// MARK: - protocol
+// MARK: - tableview protocol
 extension JENHomeViewController {
     // MARK: tableview data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

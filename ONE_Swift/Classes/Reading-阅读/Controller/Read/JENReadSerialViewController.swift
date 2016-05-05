@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadSerialViewController: JENReadTableViewController {
+class JENReadSerialViewController : JENReadTableViewController {
 
 
     override func readItems() -> [AnyObject] {
@@ -19,6 +19,8 @@ class JENReadSerialViewController: JENReadTableViewController {
     }
 
 }
+
+// MARK: - tableView protocol
 extension JENReadSerialViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JENReadCell {
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
@@ -29,8 +31,6 @@ extension JENReadSerialViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let serialVc = JENSerialDetailViewController()
-        serialVc.title = "连载"
-        
         guard let detail_id = (readItems()[indexPath.row] as! JENReadSerialItem).content_id else { return }
         serialVc.detail_id = detail_id
         navigationController?.pushViewController(serialVc, animated: true)

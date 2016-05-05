@@ -8,11 +8,39 @@
 
 import UIKit
 
-class JENEssayDetailViewController: JENReadDetailViewController {
-
+class JENEssayDetailViewController : JENReadDetailViewController {
     
-    override func readType() -> JENReadType {
+    override var readType: JENReadType {
         return .Essay
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "问答"
+    }
+    
+    override func loadRealtedData() {
+        JENLoadData.loadReadEssayRelated(detail_id) { (responseObject) in
+            if responseObject.count > 0 {
+                self.relatedItems = responseObject
+                super.loadRealtedData()
+            }
+        }
+    }
+}
 
+extension JENEssayDetailViewController {
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        
+        if indexPath.section == 0 && relatedItems.count > 0 {
+            let essayDetailVC = JENEssayDetailViewController()
+            let essayItem = relatedItems[indexPath.row] as! JENReadEssayItem
+            guard let content_id = essayItem.content_id else { return }
+            essayDetailVC.detail_id = content_id
+            navigationController?.pushViewController(essayDetailVC, animated: true)
+        }
+
+    }
 }

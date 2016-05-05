@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadToolBarView: UIView {
+class JENReadToolBarView : UIView {
 
     @IBOutlet private weak var praiseBtn: UIButton!
     @IBOutlet private weak var commentBtn: UIButton!
@@ -18,7 +18,7 @@ class JENReadToolBarView: UIView {
     var detail_id = ""
     
     
-    class func toolBarView(type : JENReadType, detail_id : String) -> JENReadToolBarView {
+    class func toolBarView(type: JENReadType, detail_id: String) -> JENReadToolBarView {
         
         let toolBar = NSBundle.mainBundle().loadNibNamed("JENReadToolBarView", owner: nil, options: nil).first as! JENReadToolBarView
         toolBar.frame = CGRectMake(0, JENScreenHeight - 44, JENScreenWidth, 44)
@@ -27,7 +27,7 @@ class JENReadToolBarView: UIView {
         return toolBar
     }
     
-    func setToolBarTitle(praisenum : Int, commentnum : Int, sharenum : Int) {
+    func setToolBarTitle(praisenum: Int, commentnum: Int, sharenum: Int) {
         praiseBtn.setTitle("\(praisenum)", forState: .Normal)
         praiseBtn.setTitle("\(praisenum)", forState: .Selected)
         commentBtn.setTitle("\(commentnum)", forState: .Normal)

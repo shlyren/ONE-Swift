@@ -22,7 +22,7 @@ extension UIImage {
         return image
     }
     
-    class func imageWithColor(color : UIColor) -> UIImage {
+    class func imageWithColor(color: UIColor) -> UIImage {
         // 描述矩形
          let rect = CGRectMake(0.0, 0.0, 1.0, 1.0);
         // 开启位图上下文
@@ -46,7 +46,7 @@ extension NSMutableAttributedString {
     /**
      根据一个字符串返回一个格式化好的字符串
      */
-    class func attributedStringWithString(str : String?) -> NSAttributedString? {
+    class func attributedStringWithString(str: String?) -> NSAttributedString? {
         
         guard let str = str else { return nil }
         
@@ -102,7 +102,7 @@ extension UITableView {
     /**
      没有数据是显示的数据
      */
-    func tableViewWithNoData(message : String?, rowCount : Int) {
+    func tableViewWithNoData(message: String?, rowCount: Int) {
         if rowCount == 0 {
             let label = UILabel()
             label.text = message
@@ -126,7 +126,7 @@ extension UIColor {
      - parameter color: 支持"#123456"、 "0X123456"、 "123456"三种格式
      - parameter alpha: 透明度
      */
-    class func colorWithHexString(color : String?, alpha : CGFloat) -> UIColor {
+    class func colorWithHexString(color: String?, alpha: CGFloat) -> UIColor {
         guard let color = color else {
             return UIColor.clearColor()
         }
@@ -156,9 +156,9 @@ extension UIColor {
         let bString = cString.substringWithRange(range)
         
         
-        var r : uint = 0
-        var g : uint = 0
-        var b : uint = 0
+        var r: uint = 0
+        var g: uint = 0
+        var b: uint = 0
         NSScanner(string:rString).scanHexInt(&r)
         NSScanner(string:gString).scanHexInt(&g)
         NSScanner(string:bString).scanHexInt(&b)
@@ -171,7 +171,7 @@ extension UIColor {
      
      - parameter colorStr: 支持"#123456"、 "0X123456"、 "123456"三种格式
      */
-    class func colorWithHexString(colorStr : String?) -> UIColor {
+    class func colorWithHexString(colorStr: String?) -> UIColor {
         
         return UIColor.colorWithHexString(colorStr, alpha: 1)
     }
@@ -185,7 +185,7 @@ extension UIColor {
      - parameter b: 蓝色 0~255
      - parameter a: 透明度 0.0~1.0
      */
-    class func color(r r : CGFloat, g : CGFloat, b : CGFloat, a : CGFloat) -> UIColor {
+    class func color(r r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
         return UIColor(red: r / 255.0,
                      green: g / 255.0,
                       blue: b / 255.0,
@@ -205,42 +205,42 @@ extension UIColor {
 // MARK: - UIScrollViewExtension
 extension UIScrollView {
     /// 内边距Top
-    var insetT : CGFloat {
+    var insetT: CGFloat {
         get { return self.contentInset.top }
         set { self.contentInset.top = newValue }
     }
     /// 内边距Left
-    var insetL : CGFloat {
+    var insetL: CGFloat {
         get { return self.contentInset.left }
         set { self.contentInset.left = newValue }
     }
     /// 内边距Bottom
-    var insetB : CGFloat {
+    var insetB: CGFloat {
         get { return self.contentInset.bottom }
         set { self.contentInset.bottom = newValue }
     }
     /// 内边距Right
-    var insetR : CGFloat {
+    var insetR: CGFloat {
         get { return self.contentInset.right }
         set { self.contentInset.right = newValue }
     }
     /// 偏移量X
-    var offsetX : CGFloat {
+    var offsetX: CGFloat {
         get { return self.contentOffset.x }
         set { self.contentOffset.x = newValue}
     }
     /// 偏移量Y
-    var offsetY : CGFloat {
+    var offsetY: CGFloat {
         get { return self.contentOffset.y }
         set { self.contentOffset.y = newValue}
     }
     /// 内容Width
-    var contentW : CGFloat {
+    var contentW: CGFloat {
         get { return self.contentSize.width }
         set { self.contentSize.width = newValue}
     }
     /// 内容Height
-    var contentH : CGFloat {
+    var contentH: CGFloat {
         get { return self.contentSize.height }
         set { self.contentSize.height = newValue}
     }
@@ -250,38 +250,38 @@ extension UIScrollView {
 // MARK: - UIViewExtension
 extension UIView {
     
-    var x : CGFloat {
+    var x: CGFloat {
         get { return self.frame.origin.x }
         set { self.frame.origin.x = newValue }
     }
-    var y : CGFloat {
+    var y: CGFloat {
         get { return self.frame.origin.y }
         set { self.frame.origin.y = newValue }
     }
     
-    var width : CGFloat {
+    var width: CGFloat {
         get { return self.frame.size.width }
         set { self.frame.size.width = newValue }
     }
-    var height : CGFloat {
+    var height: CGFloat {
         get { return self.frame.size.height  }
         set { self.frame.size.height = newValue }
     }
     
-    var size : CGSize {
+    var size: CGSize {
         get { return self.frame.size  }
         set { self.frame.size = newValue }
     }
-    var origin : CGPoint {
+    var origin: CGPoint {
         get { return self.frame.origin }
         set { self.frame.origin = newValue }
     }
     
-    var centerX : CGFloat {
+    var centerX: CGFloat {
         get { return self.center.x }
         set { self.center.x = newValue }
     }
-    var centerY : CGFloat {
+    var centerY: CGFloat {
         get { return self.center.y }
         set { self.center.y = newValue }
     }

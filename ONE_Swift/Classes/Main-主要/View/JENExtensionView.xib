@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="KsD-WH-8TG" customClass="JENTableFooterView" customModule="ONE_Swift" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="KsD-WH-8TG" userLabel="pastListView" customClass="JENExtensionView" customModule="ONE_Swift" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="301" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -54,7 +54,47 @@
             <connections>
                 <outlet property="footerBth" destination="IlJ-Dz-dVO" id="Pbj-OR-3W7"/>
             </connections>
-            <point key="canvasLocation" x="-9.5" y="349"/>
+            <point key="canvasLocation" x="209.5" y="469"/>
+        </view>
+        <view contentMode="scaleToFill" id="aGI-xb-Fi3" userLabel="推荐SectionHeaderView" customClass="JENExtensionView" customModule="ONE_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相关推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wq3-7I-7v9">
+                    <rect key="frame" x="10" y="12" width="48" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Wq3-7I-7v9" firstAttribute="centerY" secondItem="aGI-xb-Fi3" secondAttribute="centerY" id="4eg-x9-OG7"/>
+                <constraint firstItem="Wq3-7I-7v9" firstAttribute="leading" secondItem="aGI-xb-Fi3" secondAttribute="leading" constant="10" id="rxQ-aa-nIe"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="246.5" y="580"/>
+        </view>
+        <view contentMode="scaleToFill" id="IpC-cV-57l" userLabel="评论列表SectionHeaderView" customClass="JENExtensionView" customModule="ONE_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ff-wo-PEf">
+                    <rect key="frame" x="10" y="12" width="48" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="5Ff-wo-PEf" firstAttribute="centerY" secondItem="IpC-cV-57l" secondAttribute="centerY" id="fYd-kB-EyJ"/>
+                <constraint firstItem="5Ff-wo-PEf" firstAttribute="leading" secondItem="IpC-cV-57l" secondAttribute="leading" constant="10" id="oaM-tc-TUP"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="251.5" y="764"/>
         </view>
     </objects>
     <resources>

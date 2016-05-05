@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JENReadRelatedCell" rowHeight="127" id="xpD-sw-Qfh" customClass="JENReadRelatedCell" customModule="ONE_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="127"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xpD-sw-Qfh" id="mdh-eG-UNA">
+                <rect key="frame" x="0.0" y="0.0" width="352" height="126.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaP-zw-Cjt">
+                        <rect key="frame" x="10" y="15" width="281" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQx-ES-ONR">
+                        <rect key="frame" x="10" y="44" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="WZ3-g7-6tn">
+                        <rect key="frame" x="301" y="16" width="41" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="t96-py-Z1J"/>
+                            <constraint firstAttribute="width" constant="41" id="wkp-X5-Cbb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvq-9d-a0m">
+                        <rect key="frame" x="10" y="71" width="332" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="WZ3-g7-6tn" firstAttribute="leading" secondItem="yaP-zw-Cjt" secondAttribute="trailing" constant="10" id="93e-qT-wJc"/>
+                    <constraint firstItem="nvq-9d-a0m" firstAttribute="leading" secondItem="RQx-ES-ONR" secondAttribute="leading" id="FoS-cF-poC"/>
+                    <constraint firstItem="yaP-zw-Cjt" firstAttribute="leading" secondItem="mdh-eG-UNA" secondAttribute="leading" constant="10" id="GS3-75-8xB"/>
+                    <constraint firstAttribute="trailing" secondItem="WZ3-g7-6tn" secondAttribute="trailing" constant="10" id="NmB-oA-ghZ"/>
+                    <constraint firstItem="yaP-zw-Cjt" firstAttribute="top" secondItem="mdh-eG-UNA" secondAttribute="top" constant="15" id="PRJ-dg-olW"/>
+                    <constraint firstItem="nvq-9d-a0m" firstAttribute="top" secondItem="RQx-ES-ONR" secondAttribute="bottom" constant="10" id="TcD-hC-Lye"/>
+                    <constraint firstAttribute="trailing" secondItem="nvq-9d-a0m" secondAttribute="trailing" constant="10" id="WY3-R8-3mr"/>
+                    <constraint firstItem="RQx-ES-ONR" firstAttribute="leading" secondItem="yaP-zw-Cjt" secondAttribute="leading" id="bpb-ge-S5a"/>
+                    <constraint firstItem="RQx-ES-ONR" firstAttribute="top" secondItem="yaP-zw-Cjt" secondAttribute="bottom" constant="8" id="cZV-s7-FEi"/>
+                    <constraint firstItem="WZ3-g7-6tn" firstAttribute="centerY" secondItem="yaP-zw-Cjt" secondAttribute="centerY" id="f50-v3-Wgz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="nvq-9d-a0m" id="hAJ-dP-TtZ"/>
+                <outlet property="nameLabel" destination="RQx-ES-ONR" id="uwT-bI-gyN"/>
+                <outlet property="titleLabel" destination="yaP-zw-Cjt" id="FUe-Nk-c6b"/>
+                <outlet property="typeImgView" destination="WZ3-g7-6tn" id="a1t-wt-MPQ"/>
+            </connections>
+            <point key="canvasLocation" x="248" y="218.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="question" width="41" height="19"/>
+    </resources>
+</document>

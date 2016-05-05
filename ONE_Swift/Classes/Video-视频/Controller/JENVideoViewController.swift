@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENVideoViewController: UIViewController {
+class JENVideoViewController : UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

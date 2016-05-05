@@ -12,17 +12,19 @@ let JENScreenWidth = UIScreen.mainScreen().bounds.size.width
 
 let JENScreenHeight = UIScreen.mainScreen().bounds.size.height
 
-let JENNavMaxY : CGFloat = 64
+let JENNavMaxY: CGFloat = 64
 
-let JENDefaultMargin : CGFloat = 10
+let JENDefaultMargin: CGFloat = 10
 
-let JENTabBarH : CGFloat = 49
+let JENTabBarH: CGFloat = 49
 
-let JENTitleViewH : CGFloat = 35
+let JENTitleViewH: CGFloat = 35
 
-let JENDefaultColor : UIColor = UIColor.color(r: 150, g: 187, b: 248, a: 1)
+let JENFloatZero: CGFloat = 0.00000000001
 
-let JENDefaultFont  : UIFont = UIFont.systemFontOfSize(15)
+let JENDefaultColor: UIColor = UIColor.color(r: 150, g: 187, b: 248, a: 1)
+
+let JENDefaultFont: UIFont = UIFont.systemFontOfSize(15)
 
 let JENAuthorPlaceholderImage = UIImage(named: "author_cover")
 

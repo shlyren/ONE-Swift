@@ -8,13 +8,14 @@
 
 import UIKit
 
-class JENReadCell: UITableViewCell {
+class JENReadCell : UITableViewCell {
+    // MARK: - 私有属性
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var maketimeLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
 
-    
+    // MARK: - 短篇
     var essay = JENReadEssayItem() {
         didSet {
             titleLabel.text = essay.hp_title
@@ -24,6 +25,7 @@ class JENReadCell: UITableViewCell {
         }
     }
     
+    // MARK: - 连载
     var serial = JENReadSerialItem() {
         didSet {
             titleLabel.text = serial.title
@@ -33,6 +35,7 @@ class JENReadCell: UITableViewCell {
         }
     }
     
+    // MARK: - 问答
     var question = JENReadQuestionItem() {
         didSet {
             titleLabel.text = question.question_title

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadTableViewController: UITableViewController {
+class JENReadTableViewController : UITableViewController {
 
     private let readCellID = "JENReadCell"
     
@@ -27,6 +27,7 @@ class JENReadTableViewController: UITableViewController {
     }
 }
 
+// MARK: - view
 extension JENReadTableViewController {
    private func setupView() {
         automaticallyAdjustsScrollViewInsets = false
@@ -34,11 +35,11 @@ extension JENReadTableViewController {
         tableView.insetT = JENTitleViewH + JENDefaultMargin
         tableView.scrollIndicatorInsets.top = JENTitleViewH
         tableView.separatorStyle = .None
-        tableView.tableFooterView = JENTableFooterView.footerView(self, action: #selector(JENReadTableViewController.footerBtnClick))
+        tableView.tableFooterView = JENExtensionView.pastListFooterView(self, action: #selector(JENReadTableViewController.footerBtnClick))
     }
 }
 
-// MARK: - table view protocol
+// MARK: - tableView protocol
 extension JENReadTableViewController {
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,13 +51,14 @@ extension JENReadTableViewController {
         return cell
      }
     
-    // MARK: - Table view data delegate
+    // MARK: Table view data delegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return readItems()[indexPath.row].rowHeight
     }
 
 }
 
+// MARK: - Event
 private extension JENReadTableViewController {
     @objc private func footerBtnClick() {
         let homePastListVc = JENReadPastListViewController()

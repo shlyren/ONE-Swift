@@ -9,14 +9,14 @@
 import UIKit
 import SDWebImage
 
-class JENHomeDetailViewController: UIViewController {
-    @IBOutlet weak var shareBtn: UIButton!
-    @IBOutlet weak var praiseBtn: UIButton!
-    @IBOutlet weak var hp_img_url: UIImageView!
-    @IBOutlet weak var hp_title_label: UILabel!
-    @IBOutlet weak var hp_maketime_label: UILabel!
-    @IBOutlet weak var hp_author_label: UILabel!
-    @IBOutlet weak var hp_content_label: UILabel!
+class JENHomeDetailViewController : UIViewController {
+    @IBOutlet private weak var shareBtn: UIButton!
+    @IBOutlet private weak var praiseBtn: UIButton!
+    @IBOutlet private weak var hp_img_url: UIImageView!
+    @IBOutlet private weak var hp_title_label: UILabel!
+    @IBOutlet private weak var hp_maketime_label: UILabel!
+    @IBOutlet private weak var hp_author_label: UILabel!
+    @IBOutlet private weak var hp_content_label: UILabel!
     
     var homeSubTotalItem = JENHomeSubTotalItem()
     
@@ -40,12 +40,15 @@ class JENHomeDetailViewController: UIViewController {
         shareBtn.setTitle("\(homeSubTotalItem.sharenum)", forState: .Highlighted)
         praiseBtn.setTitle("\(homeSubTotalItem.praisenum)", forState: .Normal)
         praiseBtn.setTitle("\(homeSubTotalItem.praisenum)", forState: .Highlighted)
-        guard let url = homeSubTotalItem.hp_img_url else {return}
-         hp_img_url.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "home"))
+        guard let url = homeSubTotalItem.hp_img_url else {
+            hp_img_url.image = UIImage(named: "home")
+            return
+        }
+        hp_img_url.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "home"))
     }
 
     // MARK:- 拖拽手势
-    @IBAction func pan(pan : UIPanGestureRecognizer) {
+    @IBAction func pan(pan: UIPanGestureRecognizer) {
         
         let point = pan.translationInView(pan.view)
         pan.view?.centerX += point.x

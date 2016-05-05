@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENMusicViewController: UIViewController {
+class JENMusicViewController : UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

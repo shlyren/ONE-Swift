@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import SDWebImage
+import SVProgressHUD
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate : UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var timer: NSTimer?
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -20,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = JENTabBarController()
         window?.backgroundColor = UIColor.whiteColor()
         window?.makeKeyAndVisible()
-        
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
         return true
     }
 
@@ -29,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        
+        stopTimer()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -37,13 +41,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        
+        startTimer()
     }
 
     func applicationWillTerminate(application: UIApplication) {
         
     }
+    
+    func applicationDidReceiveMemoryWarning(application: UIApplication) {
+        clearMemory()
+    }
 
 
 }
 
+extension AppDelegate {
+    func startTimer() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(AppDelegate.clearMemory), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        if let timer = timer {
+            timer.invalidate()
+        }
+        timer = nil
+    }
+    
+    @objc func clearMemory() {
+        SDImageCache.sharedImageCache().clearMemory()
+    }
+}

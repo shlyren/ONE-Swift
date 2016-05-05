@@ -11,48 +11,47 @@ import UIKit
 // MARK: - 轮播列表模型
 class JENReadCarouselListItem : NSObject {
      /// id
-    var carousel_id : String?
+    var carousel_id: String?
      /// 标题
-    var title : String?
+    var title: String?
      /// 图片
-    var cover : String?
+    var cover: String?
      /// 背景颜色
-    var bgcolor : String?
+    var bgcolor: String?
      /// 底部文字
-    var bottom_text : String?
+    var bottom_text: String?
     
-    //var pv_url : String?
+    //var pv_url: String?
 }
 
 // MARK: - 轮播主题模型
-class JENReadCarouselItem: NSObject {
+class JENReadCarouselItem : NSObject {
      /// item id
-    var item_id : String?
+    var item_id: String?
      /// 标题
-    var title : String?
+    var title: String?
      /// 内容
-    var introduction : String?
+    var introduction: String?
      /// 作者
-    var author : String?
+    var author: String?
      ///
     var number = ""
      /// 类型
-    var type = ""
+    var type = 0
     
-    var readType : JENReadType {
+    var readType: JENReadType {
         get {
             var readType = JENReadType.Unknow
             switch type {
-            case "1":
-                readType = .Essay
-            case "2":
-                readType = .Serial
-            case "3":
-                readType = .Question
-            default:
-                readType = .Unknow
+                case 1:
+                    readType = .Essay
+                case 2:
+                    readType = .Serial
+                case 3:
+                    readType = .Question
+                default:
+                    readType = .Unknow
             }
-            
             return readType
         }
     }
