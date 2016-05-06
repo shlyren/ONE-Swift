@@ -10,8 +10,19 @@ import UIKit
 
 // MARK: - tableView protocol
 class JENReadPastListViewController : JENPastListViewController {
+    
+    
+    var readType = JENReadType.Unknow
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        
+        let pastListResultVc = JENReadPastListResultVC()
+        pastListResultVc.month = pastLists[indexPath.row]
+        pastListResultVc.readType = readType
+        
+        navigationController?.pushViewController(pastListResultVc, animated: true)
+        
     }
 
 }

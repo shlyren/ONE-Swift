@@ -17,10 +17,9 @@ class JENCommentCell: UITableViewCell {
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var iconImageView: UIImageView!
     
-    
     var rowHeight: CGFloat {
         layoutIfNeeded()
-        return CGRectGetMaxY(self.commentContectLabel.frame) + 15;
+        return CGRectGetMaxY(commentContectLabel.frame) + 15;
     }
     
     var commentItem = JENCommentItem() {
@@ -29,16 +28,15 @@ class JENCommentCell: UITableViewCell {
             commentContectLabel.attributedText = NSMutableAttributedString.attributedStringWithString(commentItem.content)
             commentContectLabel.sizeToFit()
             praisenumBtn.setTitle("\(commentItem.praisenum)", forState: .Normal)
-            
             userNameLabel.text = commentItem.user.user_name
-            
+
             guard let user_icon = commentItem.user.web_url else { return }
             iconImageView.sd_setImageWithURL(NSURL(string: user_icon), placeholderImage: JENAuthorPlaceholderImage) { (image: UIImage!, _, _, _) in
+                guard let image = image  else { return }
                 self.iconImageView.image = image.circleImage()
             }
         }
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         commentContectLabel.preferredMaxLayoutWidth = JENScreenWidth - 80

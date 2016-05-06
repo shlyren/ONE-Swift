@@ -10,20 +10,24 @@ import UIKit
 
 class JENReadTableViewController : UITableViewController {
 
-    private let readCellID = "JENReadCell"
-    
     var readList = JENReadListItem()
     
+    var readType: JENReadType {
+        get { return .Unknow }
+    }
+    
+    var pastListEndDate: String {
+        get { return "2012-10" }
+    }
+    
+    var readItems: [AnyObject] {
+        get { return [] }
+    }
+    
+    private let readCellID = "JENReadCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-    }
-    
-    func readItems() -> [AnyObject] {
-        return []
-    }
-    func pastListEndDate() -> String {
-        return "2012-10"
     }
 }
 
@@ -43,7 +47,7 @@ extension JENReadTableViewController {
 extension JENReadTableViewController {
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return readItems().count
+        return readItems.count
     }
 
      override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JENReadCell {
@@ -53,7 +57,7 @@ extension JENReadTableViewController {
     
     // MARK: Table view data delegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return readItems()[indexPath.row].rowHeight
+        return readItems[indexPath.row].rowHeight
     }
 
 }
@@ -61,8 +65,9 @@ extension JENReadTableViewController {
 // MARK: - Event
 private extension JENReadTableViewController {
     @objc private func footerBtnClick() {
-        let homePastListVc = JENReadPastListViewController()
-        homePastListVc.endMonth = pastListEndDate()
-        navigationController?.pushViewController(homePastListVc, animated: true)
+        let pastListVc = JENReadPastListViewController()
+        pastListVc.endMonth = pastListEndDate
+        pastListVc.readType = readType
+        navigationController?.pushViewController(pastListVc, animated: true)
     }
 }

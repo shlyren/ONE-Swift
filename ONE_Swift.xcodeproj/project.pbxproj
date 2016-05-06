@@ -36,6 +36,7 @@
 		558FD9621CD0DFE100F3EA63 /* JENLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */; };
 		558FD9641CD0E1AB00F3EA63 /* JENNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9631CD0E1AB00F3EA63 /* JENNetWorkTool.swift */; };
 		559D1DA91CD76A9800CA6CB3 /* JENReadCarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559D1DA81CD76A9800CA6CB3 /* JENReadCarouselItem.swift */; };
+		55BED5151CDC7CE00056CA16 /* JENReadPastListResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BED5141CDC7CE00056CA16 /* JENReadPastListResultVC.swift */; };
 		55D94CFE1CD988D100B8DDC2 /* JENTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94CFD1CD988D100B8DDC2 /* JENTitleButton.swift */; };
 		55D94D061CD996B500B8DDC2 /* JENReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D031CD996B500B8DDC2 /* JENReadViewController.swift */; };
 		55D94D0B1CD9972600B8DDC2 /* JENReadCarouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D94D081CD9972600B8DDC2 /* JENReadCarouseCell.swift */; };
@@ -94,6 +95,7 @@
 		558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENLoadData.swift; sourceTree = "<group>"; };
 		558FD9631CD0E1AB00F3EA63 /* JENNetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENNetWorkTool.swift; sourceTree = "<group>"; };
 		559D1DA81CD76A9800CA6CB3 /* JENReadCarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadCarouselItem.swift; sourceTree = "<group>"; };
+		55BED5141CDC7CE00056CA16 /* JENReadPastListResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadPastListResultVC.swift; sourceTree = "<group>"; };
 		55D94CFD1CD988D100B8DDC2 /* JENTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTitleButton.swift; sourceTree = "<group>"; };
 		55D94D031CD996B500B8DDC2 /* JENReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadViewController.swift; sourceTree = "<group>"; };
 		55D94D081CD9972600B8DDC2 /* JENReadCarouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadCarouseCell.swift; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				55D94D151CD997D800B8DDC2 /* JENReadSerialViewController.swift */,
 				55D94D171CD997EC00B8DDC2 /* JENReadQuestionViewController.swift */,
 				55D94D211CD9C0CF00B8DDC2 /* JENReadPastListViewController.swift */,
+				55BED5141CDC7CE00056CA16 /* JENReadPastListResultVC.swift */,
 			);
 			path = Read;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				55250B3C1CD1EB6800593404 /* JENHomeDetailViewController.swift in Sources */,
 				553FD49C1CDB506100BC0142 /* JENReadRelatedCell.swift in Sources */,
 				55D94D181CD997EC00B8DDC2 /* JENReadQuestionViewController.swift in Sources */,
+				55BED5151CDC7CE00056CA16 /* JENReadPastListResultVC.swift in Sources */,
 				55D94D241CD9C74700B8DDC2 /* JENReadDetailViewController.swift in Sources */,
 				55D94D2A1CD9CB7000B8DDC2 /* JENQuestionDetailViewController.swift in Sources */,
 				553FD4961CDA2B2A00BC0142 /* JENReadToolBarView.swift in Sources */,

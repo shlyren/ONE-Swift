@@ -25,9 +25,11 @@ class JENQuestionDetailViewController : JENReadDetailViewController {
     }
 
     override func loadRealtedData() {
-        JENLoadData.loadReadQuestionRelated(detail_id) { (responseObject) in
-            self.relatedItems = responseObject
-            super.loadRealtedData()
+        super.loadRealtedData()
+        JENLoadData.loadReadQuestionRelated("related/question/" + detail_id) { (responseObject) in
+            if responseObject.count > 0 {
+                self.relatedItems = responseObject
+            }
         }
     }
 }

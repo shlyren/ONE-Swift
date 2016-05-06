@@ -14,9 +14,8 @@ class JENReadToolBarView : UIView {
     @IBOutlet private weak var commentBtn: UIButton!
     @IBOutlet private weak var shareBtn: UIButton!
     
-    var readType = JENReadType.Unknow
-    var detail_id = ""
-    
+    private var readType = JENReadType.Unknow
+    private var detail_id = ""
     
     class func toolBarView(type: JENReadType, detail_id: String) -> JENReadToolBarView {
         

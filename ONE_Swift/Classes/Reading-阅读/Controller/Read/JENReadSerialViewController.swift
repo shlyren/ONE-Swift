@@ -10,12 +10,16 @@ import UIKit
 
 class JENReadSerialViewController : JENReadTableViewController {
 
-
-    override func readItems() -> [AnyObject] {
-        return readList.serial
+    override var readItems: [AnyObject] {
+        get { return readList.serial }
     }
-    override func pastListEndDate() -> String {
-        return "2016-01"
+    
+    override var readType: JENReadType {
+        get { return .Serial }
+    }
+    
+    override var pastListEndDate: String {
+        get { return "2016-01" }
     }
 
 }
@@ -24,14 +28,14 @@ class JENReadSerialViewController : JENReadTableViewController {
 extension JENReadSerialViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JENReadCell {
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
-        cell.serial = readItems()[indexPath.row] as! JENReadSerialItem
+        cell.serial = readItems[indexPath.row] as! JENReadSerialItem
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let serialVc = JENSerialDetailViewController()
-        guard let detail_id = (readItems()[indexPath.row] as! JENReadSerialItem).content_id else { return }
+        guard let detail_id = (readItems[indexPath.row] as! JENReadSerialItem).content_id else { return }
         serialVc.detail_id = detail_id
         navigationController?.pushViewController(serialVc, animated: true)
     }

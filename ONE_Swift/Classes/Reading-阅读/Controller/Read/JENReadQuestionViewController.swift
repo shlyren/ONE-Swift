@@ -10,8 +10,14 @@ import UIKit
 
 class JENReadQuestionViewController : JENReadTableViewController {
 
-    override func readItems() -> [AnyObject] {
-        return readList.question
+    override var readItems: [AnyObject] {
+        get { return readList.question }
+    }
+    
+    override var readType: JENReadType {
+        get {
+            return .Question
+        }
     }
 
 }
@@ -20,13 +26,13 @@ class JENReadQuestionViewController : JENReadTableViewController {
 extension JENReadQuestionViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JENReadCell {
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
-        cell.question = readItems()[indexPath.row] as! JENReadQuestionItem
+        cell.question = readItems[indexPath.row] as! JENReadQuestionItem
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let questionVc = JENQuestionDetailViewController()
-        guard let question_id = (readItems()[indexPath.row] as! JENReadQuestionItem).question_id else {
+        guard let question_id = (readItems[indexPath.row] as! JENReadQuestionItem).question_id else {
             return
         }
         questionVc.detail_id = question_id

@@ -79,6 +79,7 @@ class JENReadCarouselView : UIView {
         addSubview(collectionView)
         pageControl.numberOfPages = readCarouseItems.count
         collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: self.maxSectionNum / 2), atScrollPosition: .Left, animated: false)
+        
         collectionView.performBatchUpdates({
             self.collectionView.reloadSections(NSIndexSet(index: 0))
         }, completion: { (finished: Bool) in
@@ -98,8 +99,8 @@ class JENReadCarouselView : UIView {
 
 
 // MARK: - pageChange
-extension JENReadCarouselView {
-    private func resPage() -> NSIndexPath {
+private extension JENReadCarouselView {
+    func resPage() -> NSIndexPath {
         let currentIndexPath = collectionView.indexPathsForVisibleItems().last
         let currentIndexPathRes = NSIndexPath(forItem: (currentIndexPath?.item)!, inSection: maxSectionNum / 2)
         collectionView.scrollToItemAtIndexPath(currentIndexPathRes, atScrollPosition: .Left, animated: false)
@@ -177,7 +178,7 @@ extension JENReadCarouselView: UINavigationControllerDelegate {
 }
 
 // MARK: - timer
-extension JENReadCarouselView {
+private extension JENReadCarouselView {
     func startTimer() {
         if readCarouseItems.count < 2 { return }
         timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(JENReadCarouselView.nextPage), userInfo: nil, repeats: true)

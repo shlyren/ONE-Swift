@@ -12,9 +12,9 @@ extension UIImage {
     /**
      根据一张图片返回一个裁剪后的image
      */
-    func circleImage() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(self.size, false, 0)
-        let path = UIBezierPath(ovalInRect: CGRectMake(0, 0, self.size.width, self.size.height))
+    func circleImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        let path = UIBezierPath(ovalInRect: CGRectMake(0, 0, size.width, size.height))
         path.addClip()
         drawAtPoint(CGPointZero)
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -57,7 +57,7 @@ extension NSMutableAttributedString {
         var range = NSRange()
         range = tmpStr.rangeOfString("<!--StartFragment-->")
         if range.location != NSNotFound {
-            tmpStr = tmpStr .stringByReplacingCharactersInRange(NSMakeRange(0, range.location + range.length), withString: "")
+            tmpStr = tmpStr.stringByReplacingCharactersInRange(NSMakeRange(0, range.location + range.length), withString: "")
         }
         // 换行
         tmpStr = tmpStr.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
@@ -68,20 +68,14 @@ extension NSMutableAttributedString {
 
         range = tmpStr .rangeOfString("<!--EndFragment-->")
         if range.location != NSNotFound  {
-            
-             tmpStr = tmpStr .stringByReplacingCharactersInRange(range, withString: "")
+             tmpStr = tmpStr.stringByReplacingCharactersInRange(range, withString: "")
         }
-        
         //<!--EndFragment-->
         
         // 设置内容格式
         let attributedString = NSMutableAttributedString(string: tmpStr as String)
-        
         let paragraphStyle = NSMutableParagraphStyle()
-        
         paragraphStyle.lineSpacing = 4;//调整行间距
-        
-        
         attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, tmpStr.length))
         
         return attributedString
@@ -100,7 +94,7 @@ extension UITableView {
     }
     
     /**
-     没有数据是显示的数据
+     没有数据是显示的信息
      */
     func tableViewWithNoData(message: String?, rowCount: Int) {
         if rowCount == 0 {
@@ -127,9 +121,8 @@ extension UIColor {
      - parameter alpha: 透明度
      */
     class func colorWithHexString(color: String?, alpha: CGFloat) -> UIColor {
-        guard let color = color else {
-            return UIColor.clearColor()
-        }
+        guard let color = color else { return UIColor.clearColor() }
+        
         //删除字符串中的空格
         var cString = color.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString as NSString
         
@@ -138,13 +131,10 @@ extension UIColor {
         // strip 0X if it appears
         //如果是0x开头的，那么截取字符串，字符串从索引为2的位置开始，一直到末尾
         if cString.hasPrefix("0X") { cString = cString.substringFromIndex(2) }
-        
         //如果是#开头的，那么截取字符串，字符串从索引为1的位置开始，一直到末尾
         if cString.hasPrefix("#") { cString = cString.substringFromIndex(1) }
-        
         if cString.length != 6 { return UIColor.clearColor() }
 
-        
         var range = NSMakeRange(0, 2)
         //r
         let rString = cString.substringWithRange(range)
@@ -155,10 +145,7 @@ extension UIColor {
         range.location = 4;
         let bString = cString.substringWithRange(range)
         
-        
-        var r: uint = 0
-        var g: uint = 0
-        var b: uint = 0
+        var r: uint = 0, g: uint = 0, b: uint = 0
         NSScanner(string:rString).scanHexInt(&r)
         NSScanner(string:gString).scanHexInt(&g)
         NSScanner(string:bString).scanHexInt(&b)
@@ -194,7 +181,7 @@ extension UIColor {
     /**
      随机颜色
      */
-    class func randomColor() -> UIColor{
+    class func randomColor() -> UIColor {
         return UIColor.color(r: CGFloat(arc4random_uniform(256)),
                              g: CGFloat(arc4random_uniform(256)),
                              b: CGFloat(arc4random_uniform(256)),
@@ -206,43 +193,43 @@ extension UIColor {
 extension UIScrollView {
     /// 内边距Top
     var insetT: CGFloat {
-        get { return self.contentInset.top }
-        set { self.contentInset.top = newValue }
+        get { return contentInset.top }
+        set { contentInset.top = newValue }
     }
     /// 内边距Left
     var insetL: CGFloat {
-        get { return self.contentInset.left }
-        set { self.contentInset.left = newValue }
+        get { return contentInset.left }
+        set { contentInset.left = newValue }
     }
     /// 内边距Bottom
     var insetB: CGFloat {
-        get { return self.contentInset.bottom }
-        set { self.contentInset.bottom = newValue }
+        get { return contentInset.bottom }
+        set { contentInset.bottom = newValue }
     }
     /// 内边距Right
     var insetR: CGFloat {
-        get { return self.contentInset.right }
-        set { self.contentInset.right = newValue }
+        get { return contentInset.right }
+        set { contentInset.right = newValue }
     }
     /// 偏移量X
     var offsetX: CGFloat {
-        get { return self.contentOffset.x }
-        set { self.contentOffset.x = newValue}
+        get { return contentOffset.x }
+        set { contentOffset.x = newValue }
     }
     /// 偏移量Y
     var offsetY: CGFloat {
-        get { return self.contentOffset.y }
-        set { self.contentOffset.y = newValue}
+        get { return contentOffset.y }
+        set { contentOffset.y = newValue }
     }
     /// 内容Width
     var contentW: CGFloat {
-        get { return self.contentSize.width }
-        set { self.contentSize.width = newValue}
+        get { return contentSize.width }
+        set { contentSize.width = newValue }
     }
     /// 内容Height
     var contentH: CGFloat {
-        get { return self.contentSize.height }
-        set { self.contentSize.height = newValue}
+        get { return contentSize.height }
+        set { contentSize.height = newValue }
     }
     
 }
@@ -251,38 +238,38 @@ extension UIScrollView {
 extension UIView {
     
     var x: CGFloat {
-        get { return self.frame.origin.x }
-        set { self.frame.origin.x = newValue }
+        get { return frame.origin.x }
+        set { frame.origin.x = newValue }
     }
     var y: CGFloat {
-        get { return self.frame.origin.y }
-        set { self.frame.origin.y = newValue }
+        get { return frame.origin.y }
+        set { frame.origin.y = newValue }
     }
     
     var width: CGFloat {
-        get { return self.frame.size.width }
-        set { self.frame.size.width = newValue }
+        get { return frame.size.width }
+        set { frame.size.width = newValue }
     }
     var height: CGFloat {
-        get { return self.frame.size.height  }
-        set { self.frame.size.height = newValue }
+        get { return frame.size.height  }
+        set { frame.size.height = newValue }
     }
     
     var size: CGSize {
-        get { return self.frame.size  }
-        set { self.frame.size = newValue }
+        get { return frame.size  }
+        set { frame.size = newValue }
     }
     var origin: CGPoint {
-        get { return self.frame.origin }
-        set { self.frame.origin = newValue }
+        get { return frame.origin }
+        set { frame.origin = newValue }
     }
     
     var centerX: CGFloat {
-        get { return self.center.x }
-        set { self.center.x = newValue }
+        get { return center.x }
+        set { center.x = newValue }
     }
     var centerY: CGFloat {
-        get { return self.center.y }
-        set { self.center.y = newValue }
+        get { return center.y }
+        set { center.y = newValue }
     }
 }

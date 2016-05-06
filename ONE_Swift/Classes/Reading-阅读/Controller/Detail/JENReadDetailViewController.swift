@@ -10,20 +10,15 @@ import UIKit
 
 class JENReadDetailViewController : UIViewController {
 
-    var relatedItems = [AnyObject]()
+    var relatedItems = [AnyObject]() {
+        didSet { tableView.reloadData() }
+    }
     var detail_id = ""
     /// 阅读类型
     var readType : JENReadType {
         return .Unknow
     }
     
-    private var commentItems = [JENCommentItem]()
-    private let relatedCellID = "JENReadRelatedCell"
-    private let commentCellID = "JENCommentCell"
-    
-    
-    
-    private var headerView: JENReadDetailHeaderView?
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         tableView.insetB = 44
@@ -35,6 +30,15 @@ class JENReadDetailViewController : UIViewController {
         return tableView
     }()
     
+    private var commentItems = [JENCommentItem]() {
+        didSet { tableView.reloadData() }
+    }
+    
+    private let relatedCellID = "JENReadRelatedCell"
+    private let commentCellID = "JENCommentCell"
+    private var headerView: JENReadDetailHeaderView?
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -53,7 +57,6 @@ extension JENReadDetailViewController {
     }
     
     func loadRealtedData() {
-//        tableView.reloadData()
         loadCommentData()
     }
 }
@@ -66,7 +69,6 @@ private extension JENReadDetailViewController {
         JENLoadData.loadComment("\(readType.rawValue)/\(detail_id)/0") { (commentItems) in
             if commentItems.count > 0 {
                 self.commentItems = commentItems
-                self.tableView.reloadData()
                 self.tableView.mj_footer = JENRefreshFooter(refreshingTarget: self, refreshingAction: #selector(JENReadDetailViewController.loadMoreCommentData))
             }
         }
@@ -77,10 +79,10 @@ private extension JENReadDetailViewController {
         
         guard let comment_id = commentItems.last?.comment_id else { return }
         let url = "\(readType.rawValue)/\(detail_id)/\(comment_id)"
+       
         JENLoadData.loadComment(url) { (responseObject) in
             if responseObject.count > 0 {
                 self.commentItems += responseObject
-                self.tableView.reloadData()
             }
             if responseObject.count < 20 {
                 self.tableView.mj_footer.endRefreshingWithNoMoreData()

@@ -20,10 +20,10 @@ class JENSerialDetailViewController : JENReadDetailViewController {
     }
     
     override func loadRealtedData() {
-        JENLoadData.loadReadSerialRelated(detail_id) { (responseObject) in
+        super.loadRealtedData()
+        JENLoadData.loadReadSerialRelated("related/serial/" + detail_id) { (responseObject) in
             if responseObject.count > 0 {
                 self.relatedItems = responseObject
-                super.loadRealtedData()
             }
         }
     }

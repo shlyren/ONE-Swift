@@ -16,14 +16,14 @@ class JENEssayDetailViewController : JENReadDetailViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "问答"
+        title = "短篇"
     }
     
     override func loadRealtedData() {
-        JENLoadData.loadReadEssayRelated(detail_id) { (responseObject) in
+        super.loadRealtedData()
+        JENLoadData.loadReadEssayRelated("related/essay/" + detail_id) { (responseObject) in
             if responseObject.count > 0 {
                 self.relatedItems = responseObject
-                super.loadRealtedData()
             }
         }
     }

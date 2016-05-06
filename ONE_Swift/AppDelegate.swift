@@ -14,9 +14,7 @@ import SVProgressHUD
 class AppDelegate : UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var timer: NSTimer?
-    
-
+    private var timer: NSTimer?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -55,7 +53,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate {
+private extension AppDelegate {
     func startTimer() {
         timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(AppDelegate.clearMemory), userInfo: nil, repeats: true)
     }
@@ -64,7 +62,7 @@ extension AppDelegate {
         if let timer = timer {
             timer.invalidate()
         }
-        timer = nil
+         timer = nil
     }
     
     @objc func clearMemory() {

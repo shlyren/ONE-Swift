@@ -146,7 +146,7 @@ extension JENLoadData {
     
     // MARK: 短篇推荐
     class func loadReadEssayRelated(url: String, completion: (responseObject: [JENReadEssayItem]) -> ()) {
-         let fullUrl = "http://v3.wufazhuce.com:8000/api/related/essay/" + url
+         let fullUrl = "http://v3.wufazhuce.com:8000/api/" + url
         JENNetWorkTool.shareInstance.request(.GET, url: fullUrl, parameters: nil) { (responseObject, error) in
             
             JENReadEssayItem.mj_setupObjectClassInArray({ () -> [NSObject: AnyObject]! in
@@ -162,7 +162,7 @@ extension JENLoadData {
     
     // MARK: 连载推荐
     class func loadReadSerialRelated(url: String, completion: (responseObject: [JENReadSerialItem]) -> ()) {
-        let fullUrl = "http://v3.wufazhuce.com:8000/api/related/serial/" + url
+        let fullUrl = "http://v3.wufazhuce.com:8000/api/" + url
         JENNetWorkTool.shareInstance.request(.GET, url: fullUrl, parameters: nil) { (responseObject, error) in
             
             JENReadSerialItem.mj_setupReplacedKeyFromPropertyName({ () -> [NSObject: AnyObject]! in
@@ -179,7 +179,7 @@ extension JENLoadData {
     // MARK: 问答推荐
     class func loadReadQuestionRelated(url: String, completion: (responseObject: [JENReadQuestionItem]) -> ()) {
         
-        let fullUrl = "http://v3.wufazhuce.com:8000/api/related/question/" + url
+        let fullUrl = "http://v3.wufazhuce.com:8000/api/" + url
         JENNetWorkTool.shareInstance.request(.GET, url: fullUrl, parameters: nil) { (responseObject, error) in
             
             if error != nil { print("问答推荐加载失败\(error)"); return }
@@ -191,7 +191,7 @@ extension JENLoadData {
     }
     
     // MARK: 评论数据
-    class func loadComment(url: String, comoletion: (responseObject: [JENCommentItem]) -> ()) {
+    class func loadComment(url: String, completion: (responseObject: [JENCommentItem]) -> ()) {
         let fullUrl = "http://v3.wufazhuce.com:8000/api/comment/praiseandtime/" + url
         
         
@@ -205,9 +205,26 @@ extension JENLoadData {
             guard let data = responseObject["data"]!["data"] as? [[String: AnyObject]] else { return }
             
             let result = JENCommentItem.mj_objectArrayWithKeyValuesArray(data) as NSArray
-            comoletion(responseObject: result as! [JENCommentItem])
+            completion(responseObject: result as! [JENCommentItem])
 
         }
+    }
+    
+    class func loadSerialList(url: String, completion: (responseObject: [JENReadSerialItem]) -> ()) {
+        let fullUrl = "http://v3.wufazhuce.com:8000/api/serial/list/" + url
+        
+        JENNetWorkTool.shareInstance.request(.GET, url: fullUrl, parameters: nil) { (responseObject, error) in
+            JENReadSerialItem.mj_setupReplacedKeyFromPropertyName({ () -> [NSObject: AnyObject]! in
+                return ["content_id": "id"]
+            })
+            if error != nil { print("连载列表加载失败\(error)"); return }
+            guard let responseObject = responseObject as? [String: AnyObject] else { return }
+            guard let data = responseObject["data"] as? [String: AnyObject] else { return }
+            guard let list = data["list"] as? [[String: AnyObject]] else { return }
+            let result = JENReadSerialItem.mj_objectArrayWithKeyValuesArray(list) as NSArray
+            completion(responseObject: result as! [JENReadSerialItem])
+        }
+        
     }
 }
 

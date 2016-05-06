@@ -11,6 +11,7 @@ import UIKit
 class JENHomeViewController : UITableViewController {
 
     var urlString = "more/0"
+  
     private let homeTableCell = "JENHomeTableCell"
     private var homeSubtotal = [JENHomeSubTotalItem]()
     
@@ -22,6 +23,9 @@ class JENHomeViewController : UITableViewController {
         loadData()
     }
     
+}
+
+extension JENHomeViewController {
     // MARK:- 初始化view
     private func setupView() {
         tableView.registerNib(UINib(nibName: "JENHomeTableCell", bundle: nil), forCellReuseIdentifier: homeTableCell)
@@ -38,6 +42,7 @@ class JENHomeViewController : UITableViewController {
                 self.homeSubtotal = responseObject
                 self.tableView.reloadData()
             }
+            
             if self.navigationController?.childViewControllers.count == 1 {
                 let footerView = JENExtensionView.pastListFooterView(self, action: #selector(JENHomeViewController.footerBtnClick))
                 self.tableView.tableFooterView = footerView
@@ -55,7 +60,7 @@ class JENHomeViewController : UITableViewController {
         homePastListVc.endMonth = "2012-10"
         navigationController?.pushViewController(homePastListVc, animated: true)
     }
-    
+
 }
 
 // MARK: - tableview protocol
