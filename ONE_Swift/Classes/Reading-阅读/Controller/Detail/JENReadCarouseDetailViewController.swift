@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadCarouseDetailViewController : UIViewController {
+class JENReadCarouseDetailViewController: UIViewController {
     
     // MARK: - lazy load
         /// 头部Label
@@ -60,9 +60,9 @@ class JENReadCarouseDetailViewController : UIViewController {
             footerLabel.sizeToFit()
             
             guard let carousel_id = readCarouseListItem.carousel_id else { return }
-            JENLoadData.loadReadCarouselDetail(carousel_id) { (responseObject) in
-                if responseObject.count > 0 {
-                    self.carouselDetailItems = responseObject
+            JENLoadData.loadReadCarouselDetail(carousel_id) { (resObj) in
+                if resObj.count > 0 {
+                    self.carouselDetailItems = resObj
                     self.tableView.reloadData()
                 }
             }
@@ -91,7 +91,7 @@ class JENReadCarouseDetailViewController : UIViewController {
     
 }
 
-extension JENReadCarouseDetailViewController : UITableViewDataSource, UITableViewDelegate {
+extension JENReadCarouseDetailViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.carouselDetailItems.count ?? 0

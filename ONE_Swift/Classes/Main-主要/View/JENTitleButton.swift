@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENTitleButton : UIButton {
+class JENTitleButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

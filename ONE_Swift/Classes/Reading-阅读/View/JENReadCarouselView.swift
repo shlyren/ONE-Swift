@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class JENReadCarouselCell : UICollectionViewCell {
+class JENReadCarouselCell: UICollectionViewCell {
 
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView(frame: self.bounds)
@@ -27,7 +27,7 @@ class JENReadCarouselCell : UICollectionViewCell {
     }
 }
 
-class JENReadCarouselView : UIView {
+class JENReadCarouselView: UIView {
 
     private let pageControlHeight: CGFloat = 30
     private let readCarouselCell = "JENReadCarouselCell"
@@ -67,9 +67,9 @@ class JENReadCarouselView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.lightGrayColor()
-        JENLoadData.loadReadCarouselList { (responseObject) in
-            if responseObject.count > 0 {
-                self.readCarouseItems = responseObject
+        JENLoadData.loadReadCarouselList { (resObj) in
+            if resObj.count > 0 {
+                self.readCarouseItems = resObj
                 self.setupView()
             }
         }
@@ -123,7 +123,7 @@ private extension JENReadCarouselView {
 
 
 // MARK: - collectionView protocol
-extension JENReadCarouselView : UICollectionViewDataSource, UICollectionViewDelegate {
+extension JENReadCarouselView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return maxSectionNum
@@ -181,7 +181,7 @@ extension JENReadCarouselView: UINavigationControllerDelegate {
 private extension JENReadCarouselView {
     func startTimer() {
         if readCarouseItems.count < 2 { return }
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(JENReadCarouselView.nextPage), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(nextPage), userInfo: nil, repeats: true)
     }
     
     func stopTimer() {

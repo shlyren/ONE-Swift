@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - tableView protocol
-class JENReadPastListViewController : JENPastListViewController {
+class JENReadPastListViewController: JENPastListViewController {
     
     
     var readType = JENReadType.Unknow

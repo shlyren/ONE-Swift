@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENHomeViewController : UITableViewController {
+class JENHomeViewController: UITableViewController {
 
     var urlString = "more/0"
   
@@ -25,26 +25,29 @@ class JENHomeViewController : UITableViewController {
     
 }
 
-extension JENHomeViewController {
-    // MARK:- 初始化view
+
+private extension JENHomeViewController {
+    // MARK: 初始化view
     private func setupView() {
-        tableView.registerNib(UINib(nibName: "JENHomeTableCell", bundle: nil), forCellReuseIdentifier: homeTableCell)
+        tableView.registerNib(UINib(nibName: homeTableCell, bundle: nil), forCellReuseIdentifier: homeTableCell)
         tableView.insetT = JENDefaultMargin
         tableView.rowHeight = 105.0
         tableView.separatorStyle = .None
     }
     
-    // MARK:- 加载数据
+    // MARK: 加载数据
     private func loadData() {
-        JENLoadData.loadHomeSubtotal(urlString) { (responseObject: [JENHomeSubTotalItem]) -> () in
+        JENLoadData.loadHomeSubtotal(urlString) { (resObj: [JENHomeSubTotalItem]) -> () in
             
-            if responseObject.count > 0 {
-                self.homeSubtotal = responseObject
+            if resObj.count > 0
+            {
+                self.homeSubtotal = resObj
                 self.tableView.reloadData()
             }
             
-            if self.navigationController?.childViewControllers.count == 1 {
-                let footerView = JENExtensionView.pastListFooterView(self, action: #selector(JENHomeViewController.footerBtnClick))
+            if self.navigationController?.childViewControllers.count == 1
+            {
+                let footerView = JENExtensionView.pastListFooterView(self, action: #selector(self.footerBtnClick))
                 self.tableView.tableFooterView = footerView
             } else {
                 let footerView = UIView()
@@ -54,7 +57,7 @@ extension JENHomeViewController {
         }
     }
     
-    // MARK:-  按钮点击事件
+    // MARK:  按钮点击事件
     @objc private func footerBtnClick() {
         let homePastListVc = JENHomePastListViewController()
         homePastListVc.endMonth = "2012-10"

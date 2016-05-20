@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JENMovieListCell" rowHeight="137" id="KGk-i7-Jjw" customClass="JENMovieListCell" customModule="ONE_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-k1-uGN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="9RH-k1-uGN" secondAttribute="bottom" id="MkQ-fo-N5G"/>
+                    <constraint firstItem="9RH-k1-uGN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Tul-HK-lLd"/>
+                    <constraint firstAttribute="trailing" secondItem="9RH-k1-uGN" secondAttribute="trailing" id="aMg-ew-XyF"/>
+                    <constraint firstItem="9RH-k1-uGN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="r18-Yq-yXX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="coverImageView" destination="9RH-k1-uGN" id="1r1-Ff-USd"/>
+            </connections>
+            <point key="canvasLocation" x="226.5" y="301.5"/>
+        </tableViewCell>
+    </objects>
+</document>

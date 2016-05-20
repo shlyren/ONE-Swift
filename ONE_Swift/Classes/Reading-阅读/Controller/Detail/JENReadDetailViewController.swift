@@ -8,24 +8,28 @@
 
 import UIKit
 
-class JENReadDetailViewController : UIViewController {
+class JENReadDetailViewController: UIViewController {
 
     var relatedItems = [AnyObject]() {
         didSet { tableView.reloadData() }
     }
     var detail_id = ""
     /// 阅读类型
-    var readType : JENReadType {
+    var readType: JENReadType {
         return .Unknow
     }
+    
+    private let relatedCellID = "JENReadRelatedCell"
+    private let commentCellID = "JENCommentCell"
+    private var headerView: JENReadDetailHeaderView?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         tableView.insetB = 44
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerNib(UINib.init(nibName: "JENReadRelatedCell", bundle: nil), forCellReuseIdentifier: self.relatedCellID)
-        tableView.registerNib(UINib.init(nibName: "JENCommentCell", bundle: nil), forCellReuseIdentifier: self.commentCellID)
+        tableView.registerNib(UINib.init(nibName: self.relatedCellID, bundle: nil), forCellReuseIdentifier: self.relatedCellID)
+        tableView.registerNib(UINib.init(nibName: self.commentCellID, bundle: nil), forCellReuseIdentifier: self.commentCellID)
         tableView.scrollIndicatorInsets.bottom = 44
         return tableView
     }()
@@ -33,10 +37,7 @@ class JENReadDetailViewController : UIViewController {
     private var commentItems = [JENCommentItem]() {
         didSet { tableView.reloadData() }
     }
-    
-    private let relatedCellID = "JENReadRelatedCell"
-    private let commentCellID = "JENCommentCell"
-    private var headerView: JENReadDetailHeaderView?
+
     
 
     override func viewDidLoad() {
@@ -69,7 +70,7 @@ private extension JENReadDetailViewController {
         JENLoadData.loadComment("\(readType.rawValue)/\(detail_id)/0") { (commentItems) in
             if commentItems.count > 0 {
                 self.commentItems = commentItems
-                self.tableView.mj_footer = JENRefreshFooter(refreshingTarget: self, refreshingAction: #selector(JENReadDetailViewController.loadMoreCommentData))
+                self.tableView.mj_footer = JENRefreshFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMoreCommentData))
             }
         }
     }
@@ -80,11 +81,11 @@ private extension JENReadDetailViewController {
         guard let comment_id = commentItems.last?.comment_id else { return }
         let url = "\(readType.rawValue)/\(detail_id)/\(comment_id)"
        
-        JENLoadData.loadComment(url) { (responseObject) in
-            if responseObject.count > 0 {
-                self.commentItems += responseObject
+        JENLoadData.loadComment(url) { (resObj) in
+            if resObj.count > 0 {
+                self.commentItems += resObj
             }
-            if responseObject.count < 20 {
+            if resObj.count < 20 {
                 self.tableView.mj_footer.endRefreshingWithNoMoreData()
             } else {
                 self.tableView.mj_footer.endRefreshing()
@@ -118,7 +119,7 @@ private extension JENReadDetailViewController {
 
 
 // MARK: - table view datasource
-extension JENReadDetailViewController : UITableViewDataSource {
+extension JENReadDetailViewController: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         tableView.tableViewWithNoData(nil, rowCount: commentItems.count)
@@ -149,7 +150,7 @@ extension JENReadDetailViewController : UITableViewDataSource {
 }
 
 // MARK: - table view delegate
-extension JENReadDetailViewController : UITableViewDelegate {
+extension JENReadDetailViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if relatedItems.count > 0 && section == 0 {
             return JENExtensionView.relatedSectionHeaderView()

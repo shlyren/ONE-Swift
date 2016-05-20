@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - 短篇详情模型
-class JENReadEssayDetailItem : JENReadEssayItem {
+class JENReadEssayDetailItem: JENReadEssayItem {
     /// 子标题
     var sub_title: String?
     /// 作者
@@ -40,7 +40,7 @@ class JENReadEssayDetailItem : JENReadEssayItem {
 }
 
 // MARK: - 连载详情模型
-class JENReadSerialDetailItem : JENReadSerialItem {
+class JENReadSerialDetailItem: JENReadSerialItem {
     
     /// 内容
     var content: String?
@@ -67,7 +67,7 @@ class JENReadSerialDetailItem : JENReadSerialItem {
 }
 
 // MARK: - 问答详情模型
-class JENReadQuestionDetailItem : JENReadQuestionItem {
+class JENReadQuestionDetailItem: JENReadQuestionItem {
      /// 问题内容
     var question_content: String?
      /// 编辑人

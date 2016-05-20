@@ -14,7 +14,7 @@ enum RequestType {
     case POST
 }
 
-class JENNetWorkTool : AFHTTPSessionManager {
+class JENNetWorkTool: AFHTTPSessionManager {
     static let shareInstance: JENNetWorkTool = {
         
         let tool = JENNetWorkTool()
@@ -25,28 +25,29 @@ class JENNetWorkTool : AFHTTPSessionManager {
 
 extension JENNetWorkTool {
     
-    func request(requestType: RequestType, url: String, parameters: [String: AnyObject]?, completion: (responseObject: AnyObject?, error: NSError?) -> ()) {
+    func request(requestType: RequestType, url: String, parameters: [String: AnyObject]?, completion: (resObj: AnyObject?, error: NSError?) -> ()) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
         SVProgressHUD.show()
         /// 成功的闭包
-        let successCallBack = { (task: NSURLSessionDataTask, responseObject: AnyObject?) -> Void in
+        let successCallBack = { (task: NSURLSessionDataTask, resObj: AnyObject?) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
             SVProgressHUD.dismiss()
            
-            completion(responseObject: responseObject, error: nil)
+            completion(resObj: resObj, error: nil)
         }
         /// 失败的闭包
         let failureCallBack = { (task: NSURLSessionDataTask?, error: NSError) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
             SVProgressHUD.dismiss()
-            completion(responseObject: nil, error: error)
+            completion(resObj: nil, error: error)
         }
         
         
         if requestType == .GET {
 
             GET(url, parameters: parameters, progress: nil, success: successCallBack, failure: failureCallBack)
+            
         }else {
             POST(url, parameters: parameters, progress: nil, success: successCallBack, failure: failureCallBack)
         }

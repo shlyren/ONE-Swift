@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadTableViewController : UITableViewController {
+class JENReadTableViewController: UITableViewController {
 
     var readList = JENReadListItem()
     
@@ -35,11 +35,11 @@ class JENReadTableViewController : UITableViewController {
 extension JENReadTableViewController {
    private func setupView() {
         automaticallyAdjustsScrollViewInsets = false
-        tableView.registerNib(UINib.init(nibName: "JENReadCell", bundle: nil), forCellReuseIdentifier: readCellID)
+        tableView.registerNib(UINib.init(nibName: readCellID, bundle: nil), forCellReuseIdentifier: readCellID)
         tableView.insetT = JENTitleViewH + JENDefaultMargin
         tableView.scrollIndicatorInsets.top = JENTitleViewH
         tableView.separatorStyle = .None
-        tableView.tableFooterView = JENExtensionView.pastListFooterView(self, action: #selector(JENReadTableViewController.footerBtnClick))
+        tableView.tableFooterView = JENExtensionView.pastListFooterView(self, action: #selector(footerBtnClick))
     }
 }
 

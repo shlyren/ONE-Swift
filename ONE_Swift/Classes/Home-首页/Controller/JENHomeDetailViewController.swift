@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class JENHomeDetailViewController : UIViewController {
+class JENHomeDetailViewController: UIViewController {
     @IBOutlet private weak var shareBtn: UIButton!
     @IBOutlet private weak var praiseBtn: UIButton!
     @IBOutlet private weak var hp_img_url: UIImageView!

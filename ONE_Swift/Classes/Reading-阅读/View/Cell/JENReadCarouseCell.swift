@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadCarouseCell : UITableViewCell {
+class JENReadCarouseCell: UITableViewCell {
     /// 标题
     @IBOutlet private weak var titleLabel: UILabel!
     /// 作者

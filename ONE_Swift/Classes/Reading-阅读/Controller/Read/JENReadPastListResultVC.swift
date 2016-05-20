@@ -39,16 +39,16 @@ private extension JENReadPastListResultVC {
         let urlStr = "bymonth/" + month
         switch readType {
             case .Essay:
-            JENLoadData.loadReadEssayRelated("essay/" + urlStr, completion: { (responseObject) in
-                self.relatedData = responseObject
+            JENLoadData.loadReadEssayRelated("essay/" + urlStr, completion: { (resObj) in
+                self.relatedData = resObj
             })
             case .Serial:
-            JENLoadData.loadReadSerialRelated("serialcontent/" + urlStr, completion: { (responseObject) in
-                self.relatedData = responseObject
+            JENLoadData.loadReadSerialRelated("serialcontent/" + urlStr, completion: { (resObj) in
+                self.relatedData = resObj
             })
             case .Question:
-            JENLoadData.loadReadQuestionRelated("question/" + urlStr, completion: { (responseObject) in
-                self.relatedData = responseObject
+            JENLoadData.loadReadQuestionRelated("question/" + urlStr, completion: { (resObj) in
+                self.relatedData = resObj
             })
             default:break
         }

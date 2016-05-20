@@ -11,7 +11,7 @@ import SDWebImage
 
 typealias ContentChangBlock = (height: CGFloat?, num: (praisenum: Int, sharenum: Int, commentnum: Int)) ->()
 
-class JENReadDetailHeaderView : UIView {
+class JENReadDetailHeaderView: UIView {
     
     var readType = JENReadType.Unknow {
         didSet {
@@ -82,7 +82,7 @@ class JENReadDetailHeaderView : UIView {
         return listView
     }()
         /// 列表的title
-    private lazy var listTitleLabel : UILabel = {
+    private lazy var listTitleLabel: UILabel = {
         let listTitleLabel = UILabel()
         listTitleLabel.frame = CGRectMake(30, 0, self.width - 60, self.listTitleLabelH);
         listTitleLabel.textAlignment = .Center;
@@ -93,7 +93,7 @@ class JENReadDetailHeaderView : UIView {
         return listTitleLabel
     }()
         /// 列表按钮Scrollview
-    private lazy var listScrollView : UIScrollView = {
+    private lazy var listScrollView: UIScrollView = {
         let listScrollView = UIScrollView()
         listScrollView.frame = CGRectMake(0, self.listTitleLabelH, self.width, self.listScrollViewH);
         listScrollView.showsVerticalScrollIndicator = false;
@@ -125,9 +125,9 @@ private extension JENReadDetailHeaderView {
         listTitleLabel.text = titleLabel.text
         
         if  serialListItem.count != 0 {return}
-        JENLoadData.loadSerialList(serial_id) { (responseObject) in
-            if responseObject.count > 0 {
-                self.serialListItem = responseObject
+        JENLoadData.loadSerialList(serial_id) { (resObj) in
+            if resObj.count > 0 {
+                self.serialListItem = resObj
                 self.setupListBtn()
             }
         }
@@ -141,7 +141,7 @@ private extension JENReadDetailHeaderView {
             let listTitleBtn = UIButton(type: .Custom)
             listTitleBtn.frame = CGRectMake(margin + CGFloat(i) * (listScrollViewH + margin), 0, listScrollViewH, listScrollViewH)
             listTitleBtn.tag = i
-            listTitleBtn.addTarget(self, action: #selector(JENReadDetailHeaderView.listTitleBtnClick(_:)), forControlEvents: .TouchUpInside)
+            listTitleBtn.addTarget(self, action: #selector(listTitleBtnClick(_:)), forControlEvents: .TouchUpInside)
             listTitleBtn.setTitleColor(JENDefaultColor, forState: .Normal)
             listTitleBtn.setTitle(serialListItem[i].number, forState: .Normal)
             listTitleBtn.titleEdgeInsets.top = -7

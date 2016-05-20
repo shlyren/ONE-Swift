@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadToolBarView : UIView {
+class JENReadToolBarView: UIView {
 
     @IBOutlet private weak var praiseBtn: UIButton!
     @IBOutlet private weak var commentBtn: UIButton!

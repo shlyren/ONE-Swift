@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadCell : UITableViewCell {
+class JENReadCell: UITableViewCell {
     // MARK: - 私有属性
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!

@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - 阅读的类型
-enum JENReadType : String {
+enum JENReadType: String {
     /// 未知
     case Unknow = ""
     /// 短篇
@@ -21,7 +21,7 @@ enum JENReadType : String {
 }
 
 // MARK: - 阅读列表模型
-class JENReadListItem : NSObject {
+class JENReadListItem: NSObject {
 
     var essay = [JENReadEssayItem]()
     var serial = [JENReadSerialItem]()
@@ -29,7 +29,7 @@ class JENReadListItem : NSObject {
 }
 
 // MARK: - 短篇模型
-class JENReadEssayItem : NSObject {
+class JENReadEssayItem: NSObject {
     /// 内容id
     var content_id: String?
     /// 标题
@@ -47,7 +47,7 @@ class JENReadEssayItem : NSObject {
     private var height: CGFloat = 0.0
     var rowHeight: CGFloat {
         
-        if height > 0.0 { return height }
+        if height > JENDefaultMargin { return height }
         
         height += JENDefaultMargin
         height += (hp_title! as NSString).boundingRectWithSize(CGSizeMake(JENScreenWidth - 4 * JENDefaultMargin, CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(17)], context: nil).size.height + 5
@@ -61,7 +61,7 @@ class JENReadEssayItem : NSObject {
 }
 
 // MARK: - 连载模型
-class JENReadSerialItem : NSObject {
+class JENReadSerialItem: NSObject {
     /// 内容id   服务器 -> id
     var content_id: String?
     /// 连载id
@@ -85,7 +85,7 @@ class JENReadSerialItem : NSObject {
     private var height: CGFloat = 0.0
     var rowHeight: CGFloat {
         
-        if height > 0.0 { return height }
+        if height > JENDefaultMargin { return height }
         
         height += JENDefaultMargin
         height += (title! as NSString).boundingRectWithSize(CGSizeMake(JENScreenWidth - 4 * JENDefaultMargin, CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(17)], context: nil).size.height + 5
@@ -99,7 +99,7 @@ class JENReadSerialItem : NSObject {
 }
 
 // MARK: - 问答模型
-class JENReadQuestionItem : NSObject {
+class JENReadQuestionItem: NSObject {
      /// 问题id
     var question_id: String?
     /// 问题标题

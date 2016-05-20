@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - 用户模型
-class JENAuthorItem : NSObject {
+class JENAuthorItem: NSObject {
     var user_id: String?
     var user_name: String?
     var web_url: String?
@@ -18,7 +18,7 @@ class JENAuthorItem : NSObject {
 }
 
 // MARK: - 评论模型
-class JENCommentItem : NSObject {
+class JENCommentItem: NSObject {
     // 服务器 id
     var comment_id: String?
     var quote: String?

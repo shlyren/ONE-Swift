@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - 轮播列表模型
-class JENReadCarouselListItem : NSObject {
+class JENReadCarouselListItem: NSObject {
      /// id
     var carousel_id: String?
      /// 标题
@@ -25,7 +25,7 @@ class JENReadCarouselListItem : NSObject {
 }
 
 // MARK: - 轮播主题模型
-class JENReadCarouselItem : NSObject {
+class JENReadCarouselItem: NSObject {
      /// item id
     var item_id: String?
      /// 标题

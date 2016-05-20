@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENExtensionView : UIView {
+class JENExtensionView: UIView {
     
     @IBOutlet private weak var footerBth: UIButton!
 }

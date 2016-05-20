@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class JENHomeTableCell : UITableViewCell {
+class JENHomeTableCell: UITableViewCell {
     
     
     @IBOutlet weak var hp_titleLabel: UILabel!
@@ -37,10 +37,5 @@ class JENHomeTableCell : UITableViewCell {
             hp_img_url.sd_setImageWithURL(NSURL(string: img_url), placeholderImage: UIImage(named: "home"))
         }
     }
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        selectionStyle = .None
-//    }
-    
+
 }

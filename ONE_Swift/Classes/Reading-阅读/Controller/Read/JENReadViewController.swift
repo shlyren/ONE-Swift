@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadViewController : UIViewController {
+class JENReadViewController: UIViewController {
     private var seletctedBtn = JENTitleButton()
     private let titlesView = UIView()
     private var titleLineView = UIView()
@@ -22,8 +22,8 @@ class JENReadViewController : UIViewController {
         setupCarouseView()
         setupAllChildVc()
         
-        JENLoadData.loadReadList { (responseObject: JENReadListItem) in
-            self.readList = responseObject
+        JENLoadData.loadReadList { (resObj: JENReadListItem) in
+            self.readList = resObj
             self.setupBaseView()
         }
     }
@@ -71,7 +71,7 @@ private extension JENReadViewController {
             let titleBtn = JENTitleButton(frame: frame)
             titleBtn.tag = i
             titleBtn.setTitle(titles[i], forState: .Normal)
-            titleBtn.addTarget(self, action: #selector(JENReadViewController.titleBtnClick(_:)), forControlEvents: .TouchUpInside)
+            titleBtn.addTarget(self, action: #selector(titleBtnClick(_:)), forControlEvents: .TouchUpInside)
             titlesView.addSubview(titleBtn)
             if i == 0 { titleBtnClick(titleBtn) }
         }
@@ -121,7 +121,7 @@ private extension JENReadViewController {
 }
 
 // MARK: -  UIScrollViewDelegate
-extension JENReadViewController : UIScrollViewDelegate {
+extension JENReadViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let index = Int(scrollView.offsetX / scrollView.width)
         titleBtnClick(titlesView.subviews[index] as! JENTitleButton)

@@ -9,16 +9,19 @@
 import UIKit
 import SVProgressHUD
 
-class JENNavigationController : UINavigationController, UIGestureRecognizerDelegate {
+class JENNavigationController: UINavigationController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         interactivePopGestureRecognizer?.enabled = false
         
-        let pan = UIPanGestureRecognizer(target: self.interactivePopGestureRecognizer?.delegate, action: #selector(JENNavigationController.handleNavigationTransition(_:)))
+        let pan = UIPanGestureRecognizer(target: self.interactivePopGestureRecognizer?.delegate, action: #selector(handleNavigationTransition(_:)))
         pan.delegate = self
         view.addGestureRecognizer(pan)
     }
+}
+
+extension JENNavigationController {
     
     override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
         SVProgressHUD.dismiss()
@@ -32,12 +35,12 @@ class JENNavigationController : UINavigationController, UIGestureRecognizerDeleg
             viewController.hidesBottomBarWhenPushed = true;
             
             viewController.navigationItem.leftBarButtonItem = setupBackBtn()
-
+            
         } else {
             
-            viewController.navigationItem.leftBarButtonItem = setupNavItem(image: "nav_search_default", frame: CGRectMake(0, 15, 20, 20), action: #selector(JENNavigationController.leftBtnClick))
+            viewController.navigationItem.leftBarButtonItem = setupNavItem(image: "nav_search_default", frame: CGRectMake(0, 15, 20, 20), action: #selector(leftBtnClick))
             
-            viewController.navigationItem.rightBarButtonItem = setupNavItem(image: "nav_me_default", frame: CGRectMake(30, 15, 20, 20), action: #selector(JENNavigationController.rightBtnClick))
+            viewController.navigationItem.rightBarButtonItem = setupNavItem(image: "nav_me_default", frame: CGRectMake(30, 15, 20, 20), action: #selector(rightBtnClick))
         }
         
         super.pushViewController(viewController, animated: animated)
@@ -49,7 +52,6 @@ class JENNavigationController : UINavigationController, UIGestureRecognizerDeleg
     }
     
     @objc private func handleNavigationTransition(pan: UIPanGestureRecognizer) {}
-
 }
 
 // MARK: - 按钮点击
@@ -81,7 +83,7 @@ private extension JENNavigationController {
         backBtn.sizeToFit()
         
         backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
-        backBtn.addTarget(self, action: #selector(JENNavigationController.backBtnClick), forControlEvents: .TouchUpInside)
+        backBtn.addTarget(self, action: #selector(backBtnClick), forControlEvents: .TouchUpInside)
         
         return UIBarButtonItem(customView: backBtn)
     }

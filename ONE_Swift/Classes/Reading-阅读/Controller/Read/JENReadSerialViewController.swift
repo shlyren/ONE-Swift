@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadSerialViewController : JENReadTableViewController {
+class JENReadSerialViewController: JENReadTableViewController {
 
     override var readItems: [AnyObject] {
         get { return readList.serial }

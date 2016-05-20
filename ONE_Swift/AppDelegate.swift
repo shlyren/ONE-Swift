@@ -11,7 +11,7 @@ import SDWebImage
 import SVProgressHUD
 
 @UIApplicationMain
-class AppDelegate : UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var timer: NSTimer?
@@ -22,7 +22,10 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
         window?.rootViewController = JENTabBarController()
         window?.backgroundColor = UIColor.whiteColor()
         window?.makeKeyAndVisible()
+        
         SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        
+        window?.addSubview(JENFPSLabel(frame: CGRectMake(15, JENScreenHeight - 50, 0, 0)))
         return true
     }
 
@@ -55,7 +58,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func startTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(AppDelegate.clearMemory), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(clearMemory), userInfo: nil, repeats: true)
     }
     
     func stopTimer() {

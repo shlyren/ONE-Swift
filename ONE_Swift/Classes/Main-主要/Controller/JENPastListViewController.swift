@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENPastListViewController : UITableViewController {
+class JENPastListViewController: UITableViewController {
 
     var endMonth = ""
     var pastLists: [String] {

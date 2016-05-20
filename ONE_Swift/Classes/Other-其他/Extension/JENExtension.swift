@@ -46,7 +46,7 @@ extension NSMutableAttributedString {
     /**
      根据一个字符串返回一个格式化好的字符串
      */
-    class func attributedStringWithString(str: String?) -> NSAttributedString? {
+    class func attributedStringWithString(str: String?) -> NSMutableAttributedString? {
         
         guard let str = str else { return nil }
         

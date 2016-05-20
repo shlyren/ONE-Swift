@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENSerialDetailViewController : JENReadDetailViewController {
+class JENSerialDetailViewController: JENReadDetailViewController {
 
     override var readType: JENReadType {
         return .Serial
@@ -21,9 +21,9 @@ class JENSerialDetailViewController : JENReadDetailViewController {
     
     override func loadRealtedData() {
         super.loadRealtedData()
-        JENLoadData.loadReadSerialRelated("related/serial/" + detail_id) { (responseObject) in
-            if responseObject.count > 0 {
-                self.relatedItems = responseObject
+        JENLoadData.loadReadSerialRelated("related/serial/" + detail_id) { (resObj) in
+            if resObj.count > 0 {
+                self.relatedItems = resObj
             }
         }
     }

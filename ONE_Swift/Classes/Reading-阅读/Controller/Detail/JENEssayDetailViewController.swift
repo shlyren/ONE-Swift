@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENEssayDetailViewController : JENReadDetailViewController {
+class JENEssayDetailViewController: JENReadDetailViewController {
     
     override var readType: JENReadType {
         return .Essay
@@ -21,9 +21,9 @@ class JENEssayDetailViewController : JENReadDetailViewController {
     
     override func loadRealtedData() {
         super.loadRealtedData()
-        JENLoadData.loadReadEssayRelated("related/essay/" + detail_id) { (responseObject) in
-            if responseObject.count > 0 {
-                self.relatedItems = responseObject
+        JENLoadData.loadReadEssayRelated("related/essay/" + detail_id) { (resObj) in
+            if resObj.count > 0 {
+                self.relatedItems = resObj
             }
         }
     }

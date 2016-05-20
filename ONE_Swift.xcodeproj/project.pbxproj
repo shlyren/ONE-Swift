@@ -13,6 +13,10 @@
 		55250B3F1CD1FEC800593404 /* JENPastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B3E1CD1FEC800593404 /* JENPastListViewController.swift */; };
 		55250B411CD2067700593404 /* JENHomePastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B401CD2067700593404 /* JENHomePastListViewController.swift */; };
 		55250B441CD20AED00593404 /* JENExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250B431CD20AED00593404 /* JENExtension.swift */; };
+		552E43B61CE2BEDB00DCE78C /* JENMovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E43B51CE2BEDB00DCE78C /* JENMovieItem.swift */; };
+		552E43B81CE2C1FD00DCE78C /* JENRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E43B71CE2C1FD00DCE78C /* JENRefreshHeader.swift */; };
+		552E43BA1CE2CCA500DCE78C /* JENMovieScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E43B91CE2CCA500DCE78C /* JENMovieScoreView.swift */; };
+		552E43BC1CE2CCAE00DCE78C /* JENMovieScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552E43BB1CE2CCAE00DCE78C /* JENMovieScoreView.xib */; };
 		553FD4961CDA2B2A00BC0142 /* JENReadToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553FD4951CDA2B2A00BC0142 /* JENReadToolBarView.swift */; };
 		553FD4981CDA2B3400BC0142 /* JENReadToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553FD4971CDA2B3400BC0142 /* JENReadToolBarView.xib */; };
 		553FD49C1CDB506100BC0142 /* JENReadRelatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553FD49A1CDB506100BC0142 /* JENReadRelatedCell.swift */; };
@@ -25,12 +29,18 @@
 		5554A0141CD1AC6D00295948 /* JENHomeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5554A0121CD1AC6D00295948 /* JENHomeTableCell.xib */; };
 		5554A0161CD1C29200295948 /* JENExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5554A0151CD1C29200295948 /* JENExtensionView.swift */; };
 		5554A0181CD1C2A400295948 /* JENExtensionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5554A0171CD1C2A400295948 /* JENExtensionView.xib */; };
+		555630A91CE1F9D2003CDED0 /* JENMovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555630A71CE1F9D2003CDED0 /* JENMovieListCell.swift */; };
+		555630AA1CE1F9D2003CDED0 /* JENMovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555630A81CE1F9D2003CDED0 /* JENMovieListCell.xib */; };
+		555630AE1CE1FC54003CDED0 /* JENFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555630AD1CE1FC54003CDED0 /* JENFPSLabel.swift */; };
+		5582495C1CE2F890004CE93F /* JENMovieHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582495A1CE2F890004CE93F /* JENMovieHeaderView.swift */; };
+		5582495F1CE2F8D9004CE93F /* JENMovieHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5582495E1CE2F8D9004CE93F /* JENMovieHeaderView.xib */; };
+		558249611CE2FA75004CE93F /* JENMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558249601CE2FA75004CE93F /* JENMovieDetailViewController.swift */; };
 		558FD9271CD0C95C00F3EA63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */; };
 		558FD92E1CD0C95C00F3EA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */; };
 		558FD9311CD0C95C00F3EA63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558FD92F1CD0C95C00F3EA63 /* LaunchScreen.storyboard */; };
 		558FD9541CD0D41E00F3EA63 /* JENHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9531CD0D41E00F3EA63 /* JENHomeViewController.swift */; };
 		558FD9561CD0D43400F3EA63 /* JENMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9551CD0D43400F3EA63 /* JENMusicViewController.swift */; };
-		558FD95A1CD0D45800F3EA63 /* JENVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9591CD0D45800F3EA63 /* JENVideoViewController.swift */; };
+		558FD95A1CD0D45800F3EA63 /* JENMovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9591CD0D45800F3EA63 /* JENMovieListViewController.swift */; };
 		558FD95C1CD0D47600F3EA63 /* JENNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD95B1CD0D47600F3EA63 /* JENNavigationController.swift */; };
 		558FD95E1CD0D48800F3EA63 /* JENTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD95D1CD0D48800F3EA63 /* JENTabBarController.swift */; };
 		558FD9621CD0DFE100F3EA63 /* JENLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */; };
@@ -70,6 +80,10 @@
 		55250B3E1CD1FEC800593404 /* JENPastListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENPastListViewController.swift; sourceTree = "<group>"; };
 		55250B401CD2067700593404 /* JENHomePastListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomePastListViewController.swift; sourceTree = "<group>"; };
 		55250B431CD20AED00593404 /* JENExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENExtension.swift; sourceTree = "<group>"; };
+		552E43B51CE2BEDB00DCE78C /* JENMovieItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMovieItem.swift; sourceTree = "<group>"; };
+		552E43B71CE2C1FD00DCE78C /* JENRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENRefreshHeader.swift; sourceTree = "<group>"; };
+		552E43B91CE2CCA500DCE78C /* JENMovieScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMovieScoreView.swift; sourceTree = "<group>"; };
+		552E43BB1CE2CCAE00DCE78C /* JENMovieScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENMovieScoreView.xib; sourceTree = "<group>"; };
 		553FD4951CDA2B2A00BC0142 /* JENReadToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadToolBarView.swift; sourceTree = "<group>"; };
 		553FD4971CDA2B3400BC0142 /* JENReadToolBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENReadToolBarView.xib; sourceTree = "<group>"; };
 		553FD49A1CDB506100BC0142 /* JENReadRelatedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENReadRelatedCell.swift; sourceTree = "<group>"; };
@@ -82,6 +96,12 @@
 		5554A0121CD1AC6D00295948 /* JENHomeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENHomeTableCell.xib; sourceTree = "<group>"; };
 		5554A0151CD1C29200295948 /* JENExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENExtensionView.swift; sourceTree = "<group>"; };
 		5554A0171CD1C2A400295948 /* JENExtensionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENExtensionView.xib; sourceTree = "<group>"; };
+		555630A71CE1F9D2003CDED0 /* JENMovieListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMovieListCell.swift; sourceTree = "<group>"; };
+		555630A81CE1F9D2003CDED0 /* JENMovieListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENMovieListCell.xib; sourceTree = "<group>"; };
+		555630AD1CE1FC54003CDED0 /* JENFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENFPSLabel.swift; sourceTree = "<group>"; };
+		5582495A1CE2F890004CE93F /* JENMovieHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMovieHeaderView.swift; sourceTree = "<group>"; };
+		5582495E1CE2F8D9004CE93F /* JENMovieHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JENMovieHeaderView.xib; sourceTree = "<group>"; };
+		558249601CE2FA75004CE93F /* JENMovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMovieDetailViewController.swift; sourceTree = "<group>"; };
 		558FD9231CD0C95C00F3EA63 /* ONE_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ONE_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558FD9261CD0C95C00F3EA63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		558FD92D1CD0C95C00F3EA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +109,7 @@
 		558FD9321CD0C95C00F3EA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		558FD9531CD0D41E00F3EA63 /* JENHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENHomeViewController.swift; sourceTree = "<group>"; };
 		558FD9551CD0D43400F3EA63 /* JENMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMusicViewController.swift; sourceTree = "<group>"; };
-		558FD9591CD0D45800F3EA63 /* JENVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENVideoViewController.swift; sourceTree = "<group>"; };
+		558FD9591CD0D45800F3EA63 /* JENMovieListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENMovieListViewController.swift; sourceTree = "<group>"; };
 		558FD95B1CD0D47600F3EA63 /* JENNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENNavigationController.swift; sourceTree = "<group>"; };
 		558FD95D1CD0D48800F3EA63 /* JENTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENTabBarController.swift; sourceTree = "<group>"; };
 		558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JENLoadData.swift; sourceTree = "<group>"; };
@@ -204,7 +224,7 @@
 				558FD9391CD0CA2100F3EA63 /* Home-首页 */,
 				558FD9471CD0CA2100F3EA63 /* Reading-阅读 */,
 				558FD9411CD0CA2100F3EA63 /* Music-音乐 */,
-				558FD94F1CD0CA2100F3EA63 /* Video-视频 */,
+				558FD94F1CD0CA2100F3EA63 /* Movie-电影 */,
 				558FD93D1CD0CA2100F3EA63 /* Main-主要 */,
 				558FD94B1CD0CA2100F3EA63 /* Search-搜索 */,
 				558FD9451CD0CA2100F3EA63 /* Other-其他 */,
@@ -287,6 +307,7 @@
 				553FD49E1CDB510400BC0142 /* JENCommentCell.swift */,
 				553FD49F1CDB510400BC0142 /* JENCommentCell.xib */,
 				553FD4A21CDB599100BC0142 /* JENRefreshFooter.swift */,
+				552E43B71CE2C1FD00DCE78C /* JENRefreshHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,6 +360,7 @@
 			children = (
 				558FD9611CD0DFE100F3EA63 /* JENLoadData.swift */,
 				558FD9631CD0E1AB00F3EA63 /* JENNetWorkTool.swift */,
+				555630AD1CE1FC54003CDED0 /* JENFPSLabel.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -413,20 +435,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		558FD94F1CD0CA2100F3EA63 /* Video-视频 */ = {
+		558FD94F1CD0CA2100F3EA63 /* Movie-电影 */ = {
 			isa = PBXGroup;
 			children = (
 				558FD9501CD0CA2100F3EA63 /* Controller */,
 				558FD9511CD0CA2100F3EA63 /* Model */,
 				558FD9521CD0CA2100F3EA63 /* View */,
 			);
-			path = "Video-视频";
+			path = "Movie-电影";
 			sourceTree = "<group>";
 		};
 		558FD9501CD0CA2100F3EA63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				558FD9591CD0D45800F3EA63 /* JENVideoViewController.swift */,
+				558FD9591CD0D45800F3EA63 /* JENMovieListViewController.swift */,
+				558249601CE2FA75004CE93F /* JENMovieDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,6 +457,7 @@
 		558FD9511CD0CA2100F3EA63 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				552E43B51CE2BEDB00DCE78C /* JENMovieItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,6 +465,12 @@
 		558FD9521CD0CA2100F3EA63 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				555630A71CE1F9D2003CDED0 /* JENMovieListCell.swift */,
+				555630A81CE1F9D2003CDED0 /* JENMovieListCell.xib */,
+				552E43B91CE2CCA500DCE78C /* JENMovieScoreView.swift */,
+				552E43BB1CE2CCAE00DCE78C /* JENMovieScoreView.xib */,
+				5582495A1CE2F890004CE93F /* JENMovieHeaderView.swift */,
+				5582495E1CE2F8D9004CE93F /* JENMovieHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,7 +570,7 @@
 				TargetAttributes = {
 					558FD9221CD0C95C00F3EA63 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = XJPMR8FRF3;
+						DevelopmentTeam = PW83CUTGKC;
 					};
 				};
 			};
@@ -570,8 +600,11 @@
 				5554A0181CD1C2A400295948 /* JENExtensionView.xib in Resources */,
 				55D94D1C1CD9999900B8DDC2 /* JENReadCell.xib in Resources */,
 				55D94D321CD9D18900B8DDC2 /* JENReadDetailHeaderView.xib in Resources */,
+				5582495F1CE2F8D9004CE93F /* JENMovieHeaderView.xib in Resources */,
+				555630AA1CE1F9D2003CDED0 /* JENMovieListCell.xib in Resources */,
 				558FD9311CD0C95C00F3EA63 /* LaunchScreen.storyboard in Resources */,
 				55D94D0C1CD9972600B8DDC2 /* JENReadCarouseCell.xib in Resources */,
+				552E43BC1CE2CCAE00DCE78C /* JENMovieScoreView.xib in Resources */,
 				558FD92E1CD0C95C00F3EA63 /* Assets.xcassets in Resources */,
 				553FD49D1CDB506100BC0142 /* JENReadRelatedCell.xib in Resources */,
 				553FD4A11CDB510400BC0142 /* JENCommentCell.xib in Resources */,
@@ -640,21 +673,26 @@
 				55D94D141CD997C700B8DDC2 /* JENReadEssayViewController.swift in Sources */,
 				55D94D061CD996B500B8DDC2 /* JENReadViewController.swift in Sources */,
 				55D94D301CD9D18000B8DDC2 /* JENReadDetailHeaderView.swift in Sources */,
-				558FD95A1CD0D45800F3EA63 /* JENVideoViewController.swift in Sources */,
+				558FD95A1CD0D45800F3EA63 /* JENMovieListViewController.swift in Sources */,
 				55250B411CD2067700593404 /* JENHomePastListViewController.swift in Sources */,
 				55D94D2E1CD9CCF300B8DDC2 /* JENReadDetailItem.swift in Sources */,
 				55D94D1B1CD9999900B8DDC2 /* JENReadCell.swift in Sources */,
+				552E43BA1CE2CCA500DCE78C /* JENMovieScoreView.swift in Sources */,
 				553FD4A01CDB510400BC0142 /* JENCommentCell.swift in Sources */,
 				558FD95E1CD0D48800F3EA63 /* JENTabBarController.swift in Sources */,
 				55F7E4DE1CD47F01002BA01A /* JENReadCarouselView.swift in Sources */,
 				55250B441CD20AED00593404 /* JENExtension.swift in Sources */,
+				558249611CE2FA75004CE93F /* JENMovieDetailViewController.swift in Sources */,
 				558FD9561CD0D43400F3EA63 /* JENMusicViewController.swift in Sources */,
 				553FD4A31CDB599100BC0142 /* JENRefreshFooter.swift in Sources */,
 				559D1DA91CD76A9800CA6CB3 /* JENReadCarouselItem.swift in Sources */,
+				552E43B81CE2C1FD00DCE78C /* JENRefreshHeader.swift in Sources */,
 				558FD9641CD0E1AB00F3EA63 /* JENNetWorkTool.swift in Sources */,
 				55D94D221CD9C0CF00B8DDC2 /* JENReadPastListViewController.swift in Sources */,
 				558FD95C1CD0D47600F3EA63 /* JENNavigationController.swift in Sources */,
 				55D94D121CD9979D00B8DDC2 /* JENReadTableViewController.swift in Sources */,
+				555630A91CE1F9D2003CDED0 /* JENMovieListCell.swift in Sources */,
+				552E43B61CE2BEDB00DCE78C /* JENMovieItem.swift in Sources */,
 				55D94D0B1CD9972600B8DDC2 /* JENReadCarouseCell.swift in Sources */,
 				5554A0131CD1AC6D00295948 /* JENHomeTableCell.swift in Sources */,
 				558FD9541CD0D41E00F3EA63 /* JENHomeViewController.swift in Sources */,
@@ -669,6 +707,7 @@
 				55D94D241CD9C74700B8DDC2 /* JENReadDetailViewController.swift in Sources */,
 				55D94D2A1CD9CB7000B8DDC2 /* JENQuestionDetailViewController.swift in Sources */,
 				553FD4961CDA2B2A00BC0142 /* JENReadToolBarView.swift in Sources */,
+				555630AE1CE1FC54003CDED0 /* JENFPSLabel.swift in Sources */,
 				5554A0161CD1C29200295948 /* JENExtensionView.swift in Sources */,
 				55D94D2C1CD9CCA600B8DDC2 /* JENOneItem.swift in Sources */,
 				55D94D281CD9CB5D00B8DDC2 /* JENSerialDetailViewController.swift in Sources */,
@@ -677,6 +716,7 @@
 				55D94D0F1CD9976E00B8DDC2 /* JENReadCarouseDetailViewController.swift in Sources */,
 				558FD9271CD0C95C00F3EA63 /* AppDelegate.swift in Sources */,
 				55D94CFE1CD988D100B8DDC2 /* JENTitleButton.swift in Sources */,
+				5582495C1CE2F890004CE93F /* JENMovieHeaderView.swift in Sources */,
 				55F7E4E11CD47FC3002BA01A /* JENConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,11 +821,13 @@
 			baseConfigurationReference = 3D606FE1F9DA26DEA9262144 /* Pods-ONE_Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuxiang Ren (9A5T9K87B2)";
 				INFOPLIST_FILE = ONE_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.ONESwift;
+				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.one.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c318c224-7a97-4537-9a39-d94029e95aed";
 			};
 			name = Debug;
 		};
@@ -794,11 +836,13 @@
 			baseConfigurationReference = 6BD509C900744CEF6CF6593A /* Pods-ONE_Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuxiang Ren (9A5T9K87B2)";
 				INFOPLIST_FILE = ONE_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.ONESwift;
+				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.one.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c318c224-7a97-4537-9a39-d94029e95aed";
 			};
 			name = Release;
 		};

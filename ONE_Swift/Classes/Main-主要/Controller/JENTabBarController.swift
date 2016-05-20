@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENTabBarController : UITabBarController {
+class JENTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class JENTabBarController : UITabBarController {
                       image: "tab_music_default",
                 selectedImg: "tab_music_selected")
         
-        setupOneChildVc(vc: JENVideoViewController(),
+        setupOneChildVc(vc: JENMovieListViewController(),
                       title: "电影",
                       image: "tab_movie_default",
                 selectedImg: "tab_movie_selected")

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JENReadQuestionViewController : JENReadTableViewController {
+class JENReadQuestionViewController: JENReadTableViewController {
 
     override var readItems: [AnyObject] {
         get { return readList.question }
