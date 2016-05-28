@@ -18,7 +18,7 @@ class JENReadPastListResultVC: UITableViewController {
         didSet { tableView.reloadData() }
     }
     
-    private let  relatedCellID = "JENReadRelatedCell"
+    private let relatedCellID = "JENReadRelatedCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
