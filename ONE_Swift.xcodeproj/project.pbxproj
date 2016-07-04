@@ -571,6 +571,7 @@
 					558FD9221CD0C95C00F3EA63 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = PW83CUTGKC;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -828,6 +829,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.one.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c318c224-7a97-4537-9a39-d94029e95aed";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -843,6 +845,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.one.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c318c224-7a97-4537-9a39-d94029e95aed";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

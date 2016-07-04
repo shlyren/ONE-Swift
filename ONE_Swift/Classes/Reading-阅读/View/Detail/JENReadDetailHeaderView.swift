@@ -163,7 +163,7 @@ private extension JENReadDetailHeaderView {
     
     // MARK: - 隐藏列表的view
     func hiddenListView() {
-        UIView.animateWithDuration(0.4) { 
+        UIView.animate(withDuration: 0.4) { 
             self.listView.y -= self.listViewH
             self.listView.alpha = 0.0
         }
@@ -175,12 +175,12 @@ private extension JENReadDetailHeaderView {
     // MARK: 短篇
     func loadEssayData() {
         
-        JENLoadData.loadReadEssayDetail(detail_id) { (essay) in
-            self.audioBtn.hidden             = essay.has_audio
+        JENLoadData.loadReadEssayDetail(url: detail_id) { (essay) in
+            self.audioBtn.isHidden             = essay.has_audio
             self.nameLabel.text              = essay.hp_author
             self.maketimeLabel.text          = essay.hp_makettime
             self.titleLabel.text             = essay.hp_title
-            self.contentLabel.attributedText = NSMutableAttributedString.attributedStringWithString(essay.hp_content)
+            self.contentLabel.attributedText = NSMutableAttributedString.attributedStringWithString(str: essay.hp_content)
             self.chargeEdtLabel.text         = essay.hp_author_introduce
             
             if let web_url = essay.author.first?.web_url {
@@ -208,16 +208,16 @@ private extension JENReadDetailHeaderView {
     // MARK: 连载
     func loadSerialData() {
         
-        JENLoadData.loadReadSerialDetail(detail_id) { (serial) in
+        JENLoadData.loadReadSerialDetail(url: detail_id) { (serial) in
             if let serial_id = serial.serial_id {
                 self.serial_id = serial_id
             }
             
-            self.listBtn.hidden              = false;
+            self.listBtn.isHidden              = false;
             self.nameLabel.text              = serial.author.user_name;
             self.maketimeLabel.text          = serial.maketime;
             self.titleLabel.text             = serial.title;
-            self.contentLabel.attributedText = NSMutableAttributedString.attributedStringWithString(serial.content)
+            self.contentLabel.attributedText = NSMutableAttributedString.attributedStringWithString(str: serial.content)
             self.chargeEdtLabel.text         = serial.charge_edt;
             
             if let webUrl = serial.author.web_url {
@@ -245,21 +245,22 @@ private extension JENReadDetailHeaderView {
     // MARK: 问答
     func loadQuestionData() {
         
-        JENLoadData.loadReadQuestionDetail(detail_id) { (questionItem) in
+        JENLoadData.loadReadQuestionDetail(url: detail_id) { (questionItem) in
             self.questionTitleLabel.text = questionItem.question_title;
-            self.questionContentLabel.attributedText = NSMutableAttributedString.attributedStringWithString(questionItem.question_content)
+            self.questionContentLabel.attributedText = NSMutableAttributedString.attributedStringWithString(str: questionItem.question_content)
             self.questionContentLabel.sizeToFit()
             self.questionMaketimeLabel.text = questionItem.last_update_date;
             self.answerTitleLabel.text = questionItem.answer_title;
             self.answerContentLabel.text = questionItem.answer_content;
-            self.answerContentLabel.attributedText = NSMutableAttributedString.attributedStringWithString(questionItem.answer_content)
+            self.answerContentLabel.attributedText = NSMutableAttributedString.attributedStringWithString(str: questionItem.answer_content)
             self.answerContentLabel.sizeToFit()
             
             self.q_charegeEdtLabel.text = questionItem.charge_edt;
             
             if let contentChangBlock = self.contentChangBlock {
                 self.layoutIfNeeded()
-                let height = CGRectGetMaxY(self.questionContentLabel.frame) + self.questionContentLabel.height + 50 + self.answerTitleLabel.height + 20 + self.answerContentLabel.height + self.q_charegeEdtLabel.height + 20;
+                let height = self.questionContentLabel.frame.maxY + self.questionContentLabel.height + 50 + self.answerTitleLabel.height + 20 + self.answerContentLabel.height + self.q_charegeEdtLabel.height + 20
+                
                 contentChangBlock(height: height, num: (questionItem.praisenum, questionItem.sharenum, questionItem.commentnum))
             }
         }
@@ -270,14 +271,14 @@ private extension JENReadDetailHeaderView {
 extension JENReadDetailHeaderView {
 
     class func detailHeaderView() -> JENReadDetailHeaderView {
-        return NSBundle.mainBundle().loadNibNamed("JENReadDetailHeaderView", owner: nil, options: nil).first as! JENReadDetailHeaderView
+        return Bundle.main().loadNibNamed("JENReadDetailHeaderView", owner: nil, options: nil).first as! JENReadDetailHeaderView
     }
     
     class func questionDetailHeaderView() -> JENReadDetailHeaderView {
-        return NSBundle.mainBundle().loadNibNamed("JENReadDetailHeaderView", owner: nil, options: nil).last as! JENReadDetailHeaderView
+        return Bundle.main().loadNibNamed("JENReadDetailHeaderView", owner: nil, options: nil).last as! JENReadDetailHeaderView
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if listView.y == 0 {
             hiddenListView()
         }

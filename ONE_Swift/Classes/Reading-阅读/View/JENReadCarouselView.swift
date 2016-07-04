@@ -1,3 +1,4 @@
+
 //
 //  JENReadCarouselView.swift
 //  ONE_Swift
@@ -33,7 +34,7 @@ class JENReadCarouselView: UIView {
     private let readCarouselCell = "JENReadCarouselCell"
     private let maxSectionNum = 10
     
-    private var timer: NSTimer?
+    private var timer: Timer?
     private var readCarouseItems = [JENReadCarouselListItem]()
     
     private lazy var collectionView: UICollectionView = {
@@ -41,22 +42,22 @@ class JENReadCarouselView: UIView {
         layout.itemSize = self.bounds.size
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.scrollDirection = .Horizontal
+        layout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.clearColor()
+        collectionView.backgroundColor = UIColor.clear()
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.pagingEnabled = true
+        collectionView.isPagingEnabled = true
         collectionView.scrollsToTop = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.registerClass(JENReadCarouselCell.classForCoder(), forCellWithReuseIdentifier: self.readCarouselCell)
+        collectionView.register(JENReadCarouselCell.classForCoder(), forCellWithReuseIdentifier: self.readCarouselCell)
         return collectionView
     }()
 
     private lazy var pageControl: UIPageControl = {
-        let pageControl = UIPageControl(frame: CGRectMake(0, self.height - self.pageControlHeight, self.width, self.pageControlHeight))
+        let pageControl = UIPageControl(frame: CGRect(x: 0, y: self.height - self.pageControlHeight, width: self.width, height: self.pageControlHeight));
         pageControl.currentPageIndicatorTintColor = JENDefaultColor
         pageControl.pageIndicatorTintColor = UIColor(white: 0.9, alpha: 1)
         pageControl.currentPage = 0
@@ -66,7 +67,7 @@ class JENReadCarouselView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.lightGrayColor()
+        backgroundColor = UIColor.lightGray()
         JENLoadData.loadReadCarouselList { (resObj) in
             if resObj.count > 0 {
                 self.readCarouseItems = resObj
@@ -78,10 +79,11 @@ class JENReadCarouselView: UIView {
     private func setupView() {
         addSubview(collectionView)
         pageControl.numberOfPages = readCarouseItems.count
+        
         collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: self.maxSectionNum / 2), atScrollPosition: .Left, animated: false)
         
         collectionView.performBatchUpdates({
-            self.collectionView.reloadSections(NSIndexSet(index: 0))
+            self.collectionView.reloadSections(IndexSet(integer: 0));
         }, completion: { (finished: Bool) in
             self.startTimer()
         })
@@ -125,16 +127,16 @@ private extension JENReadCarouselView {
 // MARK: - collectionView protocol
 extension JENReadCarouselView: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    private func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return maxSectionNum
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return readCarouseItems.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(readCarouselCell, forIndexPath: indexPath) as! JENReadCarouselCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: readCarouselCell, for: indexPath) as! JENReadCarouselCell
         let item = readCarouseItems[indexPath.row]
         
         if let cover = item.cover {
@@ -149,10 +151,10 @@ extension JENReadCarouselView: UICollectionViewDataSource, UICollectionViewDeleg
         let navigationController = JENNavigationController(rootViewController: readCarouseDetailVc)
         navigationController.delegate = self
         readCarouseDetailVc.readCarouseListItem = readCarouseItems[indexPath.item]
-        window?.rootViewController?.presentViewController(navigationController, animated: true, completion: nil)
+        window?.rootViewController?.present(navigationController, animated: true, completion: nil)
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetX = collectionView.contentOffset.x
         let page = Int(offsetX / frame.size.width + 0.5) % (readCarouseItems.count)
         if pageControl.currentPage != page {
@@ -160,20 +162,20 @@ extension JENReadCarouselView: UICollectionViewDataSource, UICollectionViewDeleg
         }
     }
 
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         stopTimer()
     }
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         startTimer()
     }
 }
 
 // MARK: - UINavigationControllerDelegate
 extension JENReadCarouselView: UINavigationControllerDelegate {
-    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         
-        navigationController.setNavigationBarHidden(viewController.isKindOfClass(JENReadCarouseDetailViewController), animated: true)
+        navigationController.setNavigationBarHidden(viewController.isKind(of: JENReadCarouseDetailViewController.classForCoder()), animated: true)
     }
 }
 
@@ -181,7 +183,7 @@ extension JENReadCarouselView: UINavigationControllerDelegate {
 private extension JENReadCarouselView {
     func startTimer() {
         if readCarouseItems.count < 2 { return }
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(nextPage), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(nextPage), userInfo: nil, repeats: true)
     }
     
     func stopTimer() {

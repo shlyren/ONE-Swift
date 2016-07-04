@@ -22,13 +22,15 @@ class JENReadEssayViewController: JENReadTableViewController {
 
 // MARK: - tableView protocol
 extension JENReadEssayViewController {
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JENReadCell {
-        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> JENReadCell {
+   
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        //tableView(tableView, cellForRowAtIndexPath: indexPath)
         cell.essay = readItems[indexPath.row] as! JENReadEssayItem
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let essayVc = JENEssayDetailViewController()
         guard let detail_id = (readItems[indexPath.row] as! JENReadEssayItem).content_id else {return}
         essayVc.detail_id = detail_id

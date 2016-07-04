@@ -56,7 +56,7 @@ class JENMovieHeaderView: UIView {
     }
     
     class func headerView(detail_id: String) -> JENMovieHeaderView {
-        let headerView =  NSBundle.mainBundle().loadNibNamed("JENMovieHeaderView", owner: nil, options: nil).first as! JENMovieHeaderView
+        let headerView =  Bundle.main().loadNibNamed("JENMovieHeaderView", owner: nil, options: nil).first as! JENMovieHeaderView
         headerView.detail_id = detail_id
         return headerView
     }
@@ -70,7 +70,7 @@ class JENMovieHeaderView: UIView {
     @IBOutlet private weak var storyViewHeight: NSLayoutConstraint!
     
     private lazy var movieStoryView: JENMovieHeaderView = {
-       let movieStoryView = NSBundle.mainBundle().loadNibNamed("JENMovieHeaderView", owner: nil, options: nil)[1] as! JENMovieHeaderView
+       let movieStoryView = Bundle.main().loadNibNamed("JENMovieHeaderView", owner: nil, options: nil)[1] as! JENMovieHeaderView
 //            movieStoryView.frame = self.
 //        movieStoryView.storyLabel.preferredMaxLayoutWidth = JENScreenWidth - 60
         return movieStoryView

@@ -68,12 +68,12 @@ private extension JENMovieListViewController {
 
 // MARK: - table View Protocol
 extension JENMovieListViewController {
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieListItems.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(moviListCellID) as! JENMovieListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: moviListCellID) as! JENMovieListCell
         cell.movieListItem = movieListItems[indexPath.row]
         return cell
     }

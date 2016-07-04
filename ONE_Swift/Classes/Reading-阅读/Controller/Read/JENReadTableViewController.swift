@@ -35,28 +35,28 @@ class JENReadTableViewController: UITableViewController {
 extension JENReadTableViewController {
    private func setupView() {
         automaticallyAdjustsScrollViewInsets = false
-        tableView.registerNib(UINib.init(nibName: readCellID, bundle: nil), forCellReuseIdentifier: readCellID)
+        tableView.register(UINib.init(nibName: readCellID, bundle: nil), forCellReuseIdentifier: readCellID)
         tableView.insetT = JENTitleViewH + JENDefaultMargin
         tableView.scrollIndicatorInsets.top = JENTitleViewH
-        tableView.separatorStyle = .None
-        tableView.tableFooterView = JENExtensionView.pastListFooterView(self, action: #selector(footerBtnClick))
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = JENExtensionView.pastListFooterView(target: self, action: #selector(footerBtnClick))
     }
 }
 
 // MARK: - tableView protocol
 extension JENReadTableViewController {
     // MARK: - Table view data source
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return readItems.count
     }
 
-     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JENReadCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(readCellID, forIndexPath: indexPath) as! JENReadCell
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> JENReadCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: readCellID, for: indexPath) as! JENReadCell
         return cell
      }
     
     // MARK: Table view data delegate
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return readItems[indexPath.row].rowHeight
     }
 

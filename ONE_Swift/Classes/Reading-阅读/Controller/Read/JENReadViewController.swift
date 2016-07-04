@@ -35,7 +35,7 @@ class JENReadViewController: UIViewController {
 private extension JENReadViewController {
     // MARK: top轮播View
     func setupCarouseView() {
-        let carouseView = JENReadCarouselView(frame: CGRectMake(0, JENNavMaxY, JENScreenWidth, JENScreenWidth * 0.4))
+        let carouseView = JENReadCarouselView(frame: CGRect(x: 0, y: JENNavMaxY, width: JENScreenWidth, height: JENScreenWidth * 0.4))
         view.addSubview(carouseView)
     }
     // MARK: 添加所有子控制器
@@ -49,9 +49,9 @@ private extension JENReadViewController {
         let titles = ["短篇", "连载", "问答"]
         /// scrollView
         let scrollViewY = JENNavMaxY + JENScreenWidth * 0.4
-        scrollView.frame = CGRectMake(0, scrollViewY , JENScreenWidth, JENScreenHeight - scrollViewY - JENTabBarH)
+        scrollView.frame = CGRect(x: 0, y: scrollViewY ,width: JENScreenWidth, height: JENScreenHeight - scrollViewY - JENTabBarH)
         scrollView.contentW = scrollView.width * CGFloat(titles.count)
-        scrollView.pagingEnabled = true
+        scrollView.isPagingEnabled = true
         scrollView.scrollsToTop = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
@@ -61,27 +61,28 @@ private extension JENReadViewController {
         /**
          *  titleView
          */
-        titlesView.frame = CGRectMake(0, scrollView.y, scrollView.width, JENTitleViewH)
+        titlesView.frame = CGRect(x: 0, y: scrollView.y, width: scrollView.width, height: JENTitleViewH)
         titlesView.backgroundColor = UIColor(white: 1, alpha: 0.9)
         
         /// titleBtn
         let titleBtnW = JENScreenWidth / CGFloat(titles.count)
         for i in 0 ..< titles.count {
-            let frame = CGRectMake(CGFloat(i) * titleBtnW, 0, titleBtnW, titlesView.height)
+            let frame = CGRect(x: CGFloat(i) * titleBtnW, y: 0, width: titleBtnW, height: titlesView.height)
             let titleBtn = JENTitleButton(frame: frame)
             titleBtn.tag = i
-            titleBtn.setTitle(titles[i], forState: .Normal)
-            titleBtn.addTarget(self, action: #selector(titleBtnClick(_:)), forControlEvents: .TouchUpInside)
+            titleBtn.setTitle(titles[i], for: UIControlState.application)
+//            titleBtn.addTarget(self, action: #selector(titleBtnClick(_:)), forControlEvents: .TouchUpInside)
             titlesView.addSubview(titleBtn)
-            if i == 0 { titleBtnClick(titleBtn) }
+            titleBtn.addTarget(self, action: Selector.init(("titleBtnClick:")), for: UIControlEvents.touchUpInside)
+            if i == 0 { titleBtnClick(btn: titleBtn) }
         }
         view.addSubview(titlesView)
         
         /// titleLine
         let titleLineH: CGFloat = 2
         let titleLineY = titlesView.height - titleLineH
-        titleLineView.backgroundColor = seletctedBtn.titleColorForState(.Selected)
-        titleLineView.frame = CGRectMake(0, titleLineY, 0, titleLineH);
+        titleLineView.backgroundColor = seletctedBtn.titleColor(for: .selected)
+        titleLineView.frame = CGRect(x: 0, y: titleLineY, width: 0, height: titleLineH);
         
         seletctedBtn.titleLabel!.sizeToFit()
         titleLineView.width = seletctedBtn.titleLabel!.width;
@@ -96,11 +97,11 @@ private extension JENReadViewController {
     // MARK: 标题按钮点击事件
     @objc private func titleBtnClick(btn: JENTitleButton) {
         if seletctedBtn == btn {return}
-        seletctedBtn.selected = false
-        btn.selected = true
+        seletctedBtn.isSelected = false
+        btn.isSelected = true
         seletctedBtn = btn
 
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.titleLineView.centerX = btn.centerX;
             self.titleLineView.width = btn.titleLabel!.width;
             self.scrollView.offsetX = CGFloat(btn.tag) * self.scrollView.width
@@ -122,8 +123,8 @@ private extension JENReadViewController {
 
 // MARK: -  UIScrollViewDelegate
 extension JENReadViewController: UIScrollViewDelegate {
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = Int(scrollView.offsetX / scrollView.width)
-        titleBtnClick(titlesView.subviews[index] as! JENTitleButton)
+        titleBtnClick(btn: titlesView.subviews[index] as! JENTitleButton)
     }
 }
